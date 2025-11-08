@@ -1,4 +1,6 @@
-USE `wfresh_db`;
+-- Do not run this file, tables are already created
+
+-- USE `wfresh_db`;
 
 -- === users ===
 DROP TABLE IF EXISTS `users`;
