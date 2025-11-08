@@ -1,3 +1,4 @@
+-- Insert data format
 
 insert into album(aid,title,artist)
 values
