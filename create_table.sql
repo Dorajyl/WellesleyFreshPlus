@@ -1,7 +1,16 @@
 USE `wfresh_db`;
 
--- === users ===
+
+DROP TABLE IF EXISTS `menu_dish`;
+DROP TABLE IF EXISTS `notification`;
+DROP TABLE IF EXISTS `comments`;
+DROP TABLE IF EXISTS `menu`;
+DROP TABLE IF EXISTS `messages`;
+DROP TABLE IF EXISTS `threads`;
+DROP TABLE IF EXISTS `post`;
+DROP TABLE IF EXISTS `dish`;
 DROP TABLE IF EXISTS `users`;
+-- === users ===
 CREATE TABLE `users` (
   `uid` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(50),
@@ -10,15 +19,14 @@ CREATE TABLE `users` (
 );
 
 -- === dish ===
-DROP TABLE IF EXISTS `dish`;
 CREATE TABLE `dish` (
-  `did` INT PRIMARY KEY AUTO_INCREMENT,
+  `did` INT PRIMARY KEY,
+  `name` VARCHAR(100),
   `description` TEXT,
-  `ingredient` TEXT
+  `filepath` TEXT
 );
 
 -- === post ===
-DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
   `postid` INT PRIMARY KEY AUTO_INCREMENT,
   `owner` INT,
@@ -26,14 +34,12 @@ CREATE TABLE `post` (
 );
 
 -- === threads ===
-DROP TABLE IF EXISTS `threads`;
 CREATE TABLE `threads` (
   `thid` INT PRIMARY KEY AUTO_INCREMENT,
   `postid` INT
 );
 
 -- === messages ===
-DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `mid` INT PRIMARY KEY AUTO_INCREMENT,
   `replyto` INT NULL,
@@ -44,7 +50,6 @@ CREATE TABLE `messages` (
 );
 
 -- === menu ===
-DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `mid` INT PRIMARY KEY AUTO_INCREMENT,
   `dininghall` ENUM('lulu','stoned','bates','tower'),
@@ -53,7 +58,6 @@ CREATE TABLE `menu` (
 );
 
 -- === comments ===
-DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
   `commentid` INT PRIMARY KEY AUTO_INCREMENT,
   `owner` INT,
@@ -64,7 +68,6 @@ CREATE TABLE `comments` (
 );
 
 -- === notification ===
-DROP TABLE IF EXISTS `notification`;
 CREATE TABLE `notification` (
   `nid` INT PRIMARY KEY AUTO_INCREMENT,
   `time` TEXT,
@@ -74,7 +77,6 @@ CREATE TABLE `notification` (
 );
 
 -- === menu_dish (join) ===
-DROP TABLE IF EXISTS `menu_dish`;
 CREATE TABLE `menu_dish` (
   `menu_mid` INT,
   `dish_did` INT,

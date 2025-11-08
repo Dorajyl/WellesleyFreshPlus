@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Felp — Menu (Modal)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  /* Minimal styling—kept light on purpose */
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 6px 8px; }
+  tr[data-link] { cursor: pointer; }
+  dialog { width: 640px; max-width: 95vw; border: 2px solid #222; border-radius: 12px; padding: 14px; }
+  dialog::backdrop { background: rgba(0,0,0,.35); }
+  .x { float: right; font-size: 20px; background: none; border: 0; cursor: pointer; }
+  .small { color: #666; font-size: 12px; }
+  .stars .star { font-size: 22px; cursor: pointer; padding: 0 2px; }
+  .star.on { color: #d79900; }
+  .comment { border-top: 1px dashed #ddd; margin-top: 8px; padding-top: 6px; }
+  .thumbs { display: grid; grid-template-columns: repeat(auto-fill, 100px); gap: 8px; margin-top: 6px; }
+  .thumbs img { width: 100px; height: 100px; object-fit: cover; border: 1px solid #ccc; border-radius: 6px; }
+</style>
+</head>
+<body>
+<h1>Felp — Menu</h1>
+
+<!-- Filters -->
+<form id="filters">
+  <label>
+    Location:
+    <select id="loc">
+      <option value="Bates">Bates</option>
+      <option value="Stone D">Stone D</option>
+      <option value="Lulu">Lulu</option>
+      <option value="Tower">Tower</option>
+    </select>
+  </label>
+
+  <label>
+    Search dish:
+    <input id="q" type="text" placeholder="e.g. pizza">
+  </label>
+
+  <label>
+    Day:
+    <select id="day">
+      <option value="today">Today</option>
+      <option value="tomorrow">Tomorrow</option>
+      <option value="sunday">Sunday</option>
+      <option value="monday">Monday</option>
+      <option value="tuesday">Tuesday</option>
+    </select>
+  </label>
+
+  <button type="submit">Apply</button>
+  <button type="button" id="clear">Clear</button>
+</form>
+
+<!-- Results table -->
+<table id="tbl">
+  <thead>
+    <tr>
+      <th>Hall</th>
+      <th>Group</th>
+      <th>Dish</th>
+      <th>Prefs</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<!-- Dish modal (no navigation) -->
+<dialog id="dishModal" aria-labelledby="modalTitle">
+  <button class="x" id="closeBtn" aria-label="Close">×</button>
+  <h2 id="modalTitle">Dish</h2>
+  <div class="small" id="modalMeta"></div>
+  <p id="modalSubtitle" style="margin-top:8px"></p>
+
+  <h3>Nutrition Facts</h3>
+  <div id="facts"></div>
+
+  <h3>Rate & Review</h3>
+  <div class="stars" id="stars" aria-label="Rate this dish">
+    <span class="star" data-s="1">★</span><span class="star" data-s="2">★</span><span class="star" data-s="3">★</span><span class="star" data-s="4">★</span><span class="star" data-s="5">★</span>
+    <span class="small" id="avgScore" style="margin-left:6px"></span>
+  </div>
+
+  <form id="reviewForm" style="margin-top:6px">
+    <textarea id="commentText" rows="3" style="width:100%" placeholder="Share your thoughts…"></textarea>
+    <div style="display:flex;gap:10px;align-items:center;margin-top:6px;flex-wrap:wrap">
+      <label class="small">Upload photo <input type="file" id="photo" accept="image/*"></label>
+      <button type="submit">Post</button>
+    </div>
+  </form>
+
+  <div id="gallery" class="thumbs"></div>
+  <div id="reviews" style="margin-top:6px"></div>
+</dialog>
+
+<script>
+/* ---------- Sample menu data (replace with fetch as needed) ---------- */
+const MENU = [
+  { id:"manhattan-clam-chowder", hall:"Bates",   group:"Soups Dinner", dish:"Manhattan Clam Chowder", prefs:[], subtitle:"Classic chowder", facts:{Calories:220,"Total Fat":"9g","Sodium":"890mg"} },
+  { id:"hearty-veg-soup",        hall:"Bates",   group:"Soups Dinner", dish:"Hearty Vegetable Soup",  prefs:["V"], subtitle:"Vegetarian", facts:{Calories:140,"Total Carbohydrate":"28g"} },
+  { id:"sweet-potato-bisque",    hall:"Stone D", group:"Soups",        dish:"Sweet Potato Bisque",   prefs:["V","GS"], subtitle:"Creamy sweet potato soup with cinnamon and honey", facts:{Calories:149,"Total Fat":"4g (5%)","Sodium":"369mg (16%)","Total Carbohydrate":"28g (10%)"} },
+  { id:"cheese-pizza",           hall:"Lulu",    group:"Pizza & Pasta",dish:"Cheese Pizza",          prefs:["V"], facts:{Calories:285,"Protein":"12g"} },
+  { id:"veggie-lovers-pizza",    hall:"Lulu",    group:"Pizza & Pasta",dish:"Vegetable Lovers Pizza",prefs:["V"], facts:{Calories:260,"Protein":"11g"} },
+  { id:"quinoa-minestrone",      hall:"Tower",   group:"Soups",        dish:"Quinoa Minestrone Soup",prefs:["V","GS"], facts:{Calories:180,"Total Fat":"3g","Carbs":"30g"} },
+  { id:"beef-barley-soup",       hall:"Tower",   group:"Soups",        dish:"Beef Barley Soup",      prefs:[], facts:{Calories:250,"Protein":"18g"} }
+];
+const DAY_STATE = { value: "today" };
+
+/* ---------- localStorage “DB” for ratings/comments/photos ---------- */
+const LS_KEY = "felp.modal.v1";
+const DB = {
+  get(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }catch{ return {}; } },
+  put(x){ localStorage.setItem(LS_KEY, JSON.stringify(x)); },
+  ensure(id){ const s=DB.get(); if(!s[id]) s[id]={ratings:[],reviews:[],photos:[]}; DB.put(s); return s; },
+  addRating(id,score){ const s=DB.ensure(id); s[id].ratings.push({score,ts:Date.now()}); DB.put(s); },
+  addReview(id,text){ const s=DB.ensure(id); s[id].reviews.push({text,ts:Date.now()}); DB.put(s); },
+  addPhoto(id,src){ const s=DB.ensure(id); s[id].photos.push({src,ts:Date.now()}); DB.put(s); },
+  read(id){ return DB.get()[id] || {ratings:[],reviews:[],photos:[]}; }
+};
+
+/* ---------- DOM refs ---------- */
+const tbody   = document.getElementById("tbody");
+const locSel  = document.getElementById("loc");
+const qInp    = document.getElementById("q");
+const daySel  = document.getElementById("day");
+const form    = document.getElementById("filters");
+
+/* ---------- Render table with filters ---------- */
+function renderTable(){
+  const loc = locSel.value;
+  const q   = qInp.value.trim().toLowerCase();
+
+  const rows = MENU.filter(r=>{
+    const okLoc = (loc==="all") || (r.hall===loc);
+    const okQ = !q || r.dish.toLowerCase().includes(q) || r.group.toLowerCase().includes(q);
+    return okLoc && okQ;
+  });
+
+  tbody.innerHTML = "";
+  if(!rows.length){
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td colspan="4">No results.</td>`;
+    tbody.appendChild(tr);
+    return;
+  }
+
+  rows.forEach(r=>{
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-link", r.id); // used by click handler
+    tr.innerHTML = `
+      <td>${r.hall}</td>
+      <td>${r.group}</td>
+      <td>${r.dish}</td>
+      <td>${r.prefs.join(", ") || "-"}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ---------- Filters events ---------- */
+form.addEventListener("submit", (e)=>{
+  e.preventDefault();
+  DAY_STATE.value = daySel.value;
+  renderTable();
+});
+document.getElementById("clear").addEventListener("click", ()=>{
+  locSel.value="all"; qInp.value=""; daySel.value="today"; DAY_STATE.value="today"; renderTable();
+});
+
+/* ---------- Row click -> open modal ---------- */
+tbody.addEventListener("click", (e)=>{
+  const tr = e.target.closest("tr[data-link]");
+  if(!tr) return;
+  const id = tr.getAttribute("data-link");
+  const item = MENU.find(d=>d.id===id);
+  if(item) openModal(item);
+});
+
+/* ---------- Modal logic ---------- */
+const modal        = document.getElementById("dishModal");
+const titleEl      = document.getElementById("modalTitle");
+const metaEl       = document.getElementById("modalMeta");
+const subtitleEl   = document.getElementById("modalSubtitle");
+const factsEl      = document.getElementById("facts");
+const closeBtn     = document.getElementById("closeBtn");
+const starEls      = [...document.querySelectorAll("#stars .star")];
+const avgScoreEl   = document.getElementById("avgScore");
+const reviewForm   = document.getElementById("reviewForm");
+const commentText  = document.getElementById("commentText");
+const photoInput   = document.getElementById("photo");
+const galleryEl    = document.getElementById("gallery");
+const reviewsEl    = document.getElementById("reviews");
+
+let currentDish = null;
+
+function openModal(d){
+  currentDish = d;
+  titleEl.textContent = d.dish;
+  metaEl.textContent = `${d.hall} • ${d.group} • ${DAY_STATE.value}`;
+  subtitleEl.textContent = d.subtitle || "";
+  // facts
+  factsEl.innerHTML = Object.entries(d.facts).map(([k,v])=>(
+    `<div><strong>${k}:</strong> ${v}</div>`
+  )).join("");
+  // ratings UI
+  paintStars(avgScoreRounded(d.id));
+  avgScoreEl.textContent = avgLabel(d.id);
+  // comments / gallery
+  renderReviews(d.id);
+  renderGallery(d.id);
+  modal.showModal();
+  modal._returnFocus = document.activeElement;
+}
+function closeModal(){ modal.close(); currentDish=null; }
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("close", ()=>{ modal._returnFocus?.focus(); });
+modal.addEventListener("click", (e)=>{
+  const r = modal.getBoundingClientRect();
+  const inside = e.clientX>=r.left && e.clientX<=r.right && e.clientY>=r.top && e.clientY<=r.bottom;
+  if(!inside) closeModal();
+});
+
+/* ---------- Ratings ---------- */
+function paintStars(score){
+  starEls.forEach(s=>{
+    const val = parseInt(s.dataset.s,10);
+    s.classList.toggle("on", val<=score);
+  });
+}
+starEls.forEach(s=>{
+  s.addEventListener("mouseenter", ()=>paintStars(parseInt(s.dataset.s,10)));
+  s.addEventListener("mouseleave", ()=>paintStars(avgScoreRounded(currentDish?.id)));
+  s.addEventListener("click", ()=>{
+    if(!currentDish) return;
+    const val = parseInt(s.dataset.s,10);
+    DB.addRating(currentDish.id, val);
+    paintStars(avgScoreRounded(currentDish.id));
+    avgScoreEl.textContent = avgLabel(currentDish.id);
+  });
+});
+function avgScoreRounded(id){
+  const rs = DB.read(id).ratings;
+  if(!rs.length) return 0;
+  return Math.round(rs.reduce((a,b)=>a+b.score,0)/rs.length);
+}
+function avgLabel(id){
+  const rs = DB.read(id).ratings;
+  if(!rs.length) return "(no ratings yet)";
+  const mean = (rs.reduce((a,b)=>a+b.score,0)/rs.length).toFixed(1);
+  return `${mean}/5 • ${rs.length} rating${rs.length>1?'s':''}`;
+}
+
+/* ---------- Comments + Photos ---------- */
+reviewForm.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  if(!currentDish) return;
+  const text = commentText.value.trim();
+  const file = photoInput.files[0];
+
+  if(text){ DB.addReview(currentDish.id, text); commentText.value=""; }
+  if(file){
+    const dataUrl = await fileToDataURL(file);
+    DB.addPhoto(currentDish.id, dataUrl);
+    photoInput.value="";
+  }
+  renderReviews(currentDish.id);
+  renderGallery(currentDish.id);
+});
+function renderReviews(id){
+  reviewsEl.innerHTML = "";
+  const items = DB.read(id).reviews.slice().sort((a,b)=>b.ts-a.ts);
+  if(!items.length){ reviewsEl.innerHTML = '<div class="small">No comments yet.</div>'; return; }
+  items.forEach(r=>{
+    const div = document.createElement("div");
+    div.className = "comment";
+    div.innerHTML = `<div class="small">${new Date(r.ts).toLocaleString()}</div><div>${escapeHTML(r.text)}</div>`;
+    reviewsEl.appendChild(div);
+  });
+}
+function renderGallery(id){
+  galleryEl.innerHTML = "";
+  const pics = DB.read(id).photos.slice().sort((a,b)=>b.ts-a.ts);
+  pics.forEach(p=>{
+    const img = new Image(); img.src = p.src; galleryEl.appendChild(img);
+  });
+}
+function fileToDataURL(file){ return new Promise(res=>{ const fr=new FileReader(); fr.onload=()=>res(fr.result); fr.readAsDataURL(file); }); }
+function escapeHTML(s){ return s.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+
+/* ---------- Boot ---------- */
+renderTable();
+</script>
+</body>
+</html>
