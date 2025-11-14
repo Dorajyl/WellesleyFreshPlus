@@ -1,3 +1,4 @@
+-- Template for data insertion (for now)
 
 insert into album(aid,title,artist)
 values
