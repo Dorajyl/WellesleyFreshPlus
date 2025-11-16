@@ -41,29 +41,33 @@ def get_dish(did):
     if request.method == 'POST':
         comment_text = request.form.get('comment', '').strip()
         comment_type = request.form.get('type', 'yum')
-        owner_id = request.form.get('owner', None)
         
         # Validate required fields
         if not comment_text:
             flash('Comment cannot be empty')
-        elif not owner_id:
-            flash('Please provide a user ID')
         else:
-            try:
-                owner_id = int(owner_id)
-                # Verify user exists
-                cur.execute('SELECT uid FROM users WHERE uid = %s', (owner_id,))
-                if cur.fetchone() is None:
-                    flash('User not found. Please use a valid user ID.')
-                else:
-                    # Insert comment
-                    cur.execute('''INSERT INTO comments (owner, type, comment, dish)
-                                   VALUES (%s, %s, %s, %s)''',
-                                (owner_id, comment_type, comment_text, did))
-                    conn.commit()
-                    flash('Comment added successfully!')
-            except (ValueError, TypeError):
-                flash('Invalid user ID')
+            # Get or create an anonymous user for comments without owner
+            # First, try to find an "Anonymous" user
+            cur.execute('SELECT uid FROM users WHERE name = %s OR email = %s LIMIT 1', 
+                       ('Anonymous', 'anonymous@example.com'))
+            anonymous_user = cur.fetchone()
+            
+            if anonymous_user is None:
+                # Create an anonymous user if it doesn't exist
+                cur.execute('''INSERT INTO users (name, email) 
+                               VALUES (%s, %s)''',
+                           ('Anonymous', 'anonymous@example.com'))
+                conn.commit()
+                owner_id = cur.lastrowid
+            else:
+                owner_id = anonymous_user[0]
+            
+            # Insert comment
+            cur.execute('''INSERT INTO comments (owner, type, comment, dish)
+                           VALUES (%s, %s, %s, %s)''',
+                        (owner_id, comment_type, comment_text, did))
+            conn.commit()
+            flash('Comment added successfully!')
     
     # Get dish information
     cur.execute('SELECT did, name, description FROM dish WHERE did = %s', (did,))
