@@ -81,8 +81,6 @@ CREATE TABLE `dish_picture` (
   `pid` INT PRIMARY KEY AUTO_INCREMENT, 
   `did` INT,
   filename VARCHAR(100),
-  FOREIGN KEY (did) REFERENCES dish(did)
-    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- === menu_dish (join) ===
@@ -123,3 +121,6 @@ ALTER TABLE `menu_dish`
 
 ALTER TABLE `menu_dish`
   ADD FOREIGN KEY (`dish_did`) REFERENCES `dish` (`did`);
+
+ALTER TABLE `dish_picture`
+  ADD FOREIGN KEY (`did`) REFERENCES `dish` (`did`);
