@@ -16,7 +16,7 @@ app.secret_key = secrets.token_hex()
 # For CRUD and Ajax, use your personal db
 # For project work, use your team db
 
-print(dbi.conf('ww123_db'))
+print(dbi.conf('wfresh_db'))
 
 # This gets us better error messages for certain common request errors
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
