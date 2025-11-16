@@ -48,9 +48,9 @@
                 <div class="comment-header">
                     <span class="comment-type {{ comment[2] }}">
                         {% if comment[2] == 'yum' %}
-                            👍 Yum
+                            😋 Yum
                         {% else %}
-                            👎 Yuck
+                            🤮 Yuck
                         {% endif %}
                     </span>
                     <span class="comment-author">
@@ -80,4 +80,12 @@
     <p>Dish not found.</p>
     {% endif %}
 </div>
+
+<style>
+.comment-text {
+    padding-left: 20px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+</style>
 {% endblock %}

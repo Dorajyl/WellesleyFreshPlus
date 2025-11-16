@@ -68,6 +68,8 @@ def get_dish(did):
                         (owner_id, comment_type, comment_text, did))
             conn.commit()
             flash('Comment added successfully!')
+            # Redirect to avoid duplicate submissions on refresh
+            return redirect(url_for('get_dish', did=did))
     
     # Get dish information
     cur.execute('SELECT did, name, description FROM dish WHERE did = %s', (did,))
