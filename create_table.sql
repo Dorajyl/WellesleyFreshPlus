@@ -75,6 +75,16 @@ CREATE TABLE `notification` (
   `owner` INT
 );
 
+-- === dish_pictures ===
+DROP TABLE IF EXISTS `dish_picture`;
+CREATE TABLE `dish_picture` (
+  `pid` INT PRIMARY KEY AUTO_INCREMENT, 
+  `did` INT,
+  filename VARCHAR(100),
+  FOREIGN KEY (did) REFERENCES dish(did)
+    ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 -- === menu_dish (join) ===
 DROP TABLE IF EXISTS `menu_dish`;
 CREATE TABLE `menu_dish` (
