@@ -30,6 +30,65 @@ def about():
     flash('this is a flashed message')
     return render_template('about.html', page_title='About Us')
 
+# Testing data: hard boil egg 39186
+@app.route('/dish/<did>', methods=['GET', 'POST'])
+def get_dish(did):
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    cur = conn.cursor()
+    
+    # Handle POST request (form submission)
+    if request.method == 'POST':
+        comment_text = request.form.get('comment', '').strip()
+        comment_type = request.form.get('type', 'yum')
+        owner_id = request.form.get('owner', None)
+        
+        # Validate required fields
+        if not comment_text:
+            flash('Comment cannot be empty')
+        elif not owner_id:
+            flash('Please provide a user ID')
+        else:
+            try:
+                owner_id = int(owner_id)
+                # Verify user exists
+                cur.execute('SELECT uid FROM users WHERE uid = %s', (owner_id,))
+                if cur.fetchone() is None:
+                    flash('User not found. Please use a valid user ID.')
+                else:
+                    # Insert comment
+                    cur.execute('''INSERT INTO comments (owner, type, comment, dish)
+                                   VALUES (%s, %s, %s, %s)''',
+                                (owner_id, comment_type, comment_text, did))
+                    conn.commit()
+                    flash('Comment added successfully!')
+            except (ValueError, TypeError):
+                flash('Invalid user ID')
+    
+    # Get dish information
+    cur.execute('SELECT did, name, description FROM dish WHERE did = %s', (did,))
+    row = cur.fetchone()
+    if row is None:
+        flash(f'No dish with id {did} found')
+        return redirect(url_for('index'))
+    
+    dish = {
+        'did': row[0],
+        'name': row[1],
+        'description': row[2]
+    }
+    
+    # Get all comments for this dish
+    cur.execute('''SELECT c.commentid, c.owner, c.type, c.comment, c.filepath,
+                          u.name as owner_name
+                   FROM comments c
+                   LEFT JOIN users u ON c.owner = u.uid
+                   WHERE c.dish = %s
+                   ORDER BY c.commentid DESC''', (did,))
+    comments = cur.fetchall()
+    
+    return render_template('dish.html', dish=dish, comments=comments)
+
 if __name__ == '__main__':
     import sys, os
     if len(sys.argv) > 1:

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="dish-page">
+    <h1>Dish Details</h1>
+    
+    {% if dish %}
+    <div class="dish-info">
+        <h2>{% if dish.name %}{{ dish.name }}{% else %}Dish #{{ dish.did }}{% endif %}</h2>
+        <p><strong>Description:</strong> {{ dish.description or 'No description available' }}</p>
+    </div>
+    
+    <hr>
+    
+    <h2>Comments</h2>
+    
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <h3>Add a Comment</h3>
+        <form method="POST" action="{{ url_for('get_dish', did=dish.did) }}">
+            <div class="form-group">
+                <label for="type">Rating:</label>
+                <select id="type" name="type" required>
+                    <option value="yum">Yum 😋</option>
+                    <option value="yuck">Yuck 🤮</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Your Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required 
+                          placeholder="Share your thoughts about this dish..."></textarea>
+            </div>
+            
+            <button type="submit">Submit Comment</button>
+        </form>
+    </div>
+    
+    <hr>
+    
+    <!-- Existing Comments -->
+    <div class="comments-section">
+        <h3>All Comments ({{ comments|length }})</h3>
+        
+        {% if comments %}
+            {% for comment in comments %}
+            <div class="comment-item">
+                <div class="comment-header">
+                    <span class="comment-type {{ comment[2] }}">
+                        {% if comment[2] == 'yum' %}
+                            👍 Yum
+                        {% else %}
+                            👎 Yuck
+                        {% endif %}
+                    </span>
+                    <span class="comment-author">
+                        {% if comment[5] %}
+                            by {{ comment[5] }}
+                        {% else %}
+                            by User #{{ comment[1] }}
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="comment-text">
+                    {{ comment[3] }}
+                </div>
+                {% if comment[4] %}
+                <div class="comment-image">
+                    <img src="{{ comment[4] }}" alt="Comment image">
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endif %}
+    </div>
+    
+    {% else %}
+    <p>Dish not found.</p>
+    {% endif %}
+</div>
+{% endblock %}
