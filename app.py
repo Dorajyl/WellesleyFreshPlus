@@ -64,7 +64,7 @@ def index():
 
     today = date.today()
     now = datetime.now()
-    meal_order = helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
+    meal_order = ["Breakfast", "Lunch", "Dinner"] # helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
 
     days = []
     for offset in range(7):
