@@ -11,6 +11,7 @@ def _to_int(x):
         return int(float(x))
     except Exception:
         return None
+    
 def _to_float(x):
     try:
         if x is None or x == "":
@@ -18,11 +19,29 @@ def _to_float(x):
         return float(x)
     except Exception:
         return None
-def build_payload_df(data, dhall: str, meal: str) -> pd.DataFrame:
+    
+def get_payload_df(date, dhall: int, meal: int):
+    """
+    Fetches menu data from the AVI Foodsystems API for a given date, dining hall, and meal,
+    and returns it as a pandas DataFrame.
+    """
+    AVI_API = "https://dish.avifoodsystems.com/api/menu-items/week"
+    response = requests.get(
+            AVI_API,
+            params={
+                "date": date.strftime(
+                    "%-m/%-d/%y"  # the - makes the date not 0-padded
+                ),
+                "locationId": dhall, # Lulu
+                "mealId": meal, # Dinner
+            },
+            verify=False,
+        )
+    data = response.json()
+    
     rows = []
     for dish in data:
         nutr = dish.get("nutritionals", {}) or {}
-
         # build row with safe casting and presence checks
         row = {
             # basic dish details
@@ -69,27 +88,27 @@ def build_payload_df(data, dhall: str, meal: str) -> pd.DataFrame:
 
     return df
 
-AVI_API = "https://dish.avifoodsystems.com/api/menu-items/week"
-date = date.today()
-response = requests.get(
-        AVI_API,
-        params={
-            "date": date.strftime(
-                "%-m/%-d/%y"  # the - makes the date not 0-padded
-            ),
-            "locationId": 96, # Lulu
-            "mealId": 312, # Dinner
-        },
-        verify=False,
-    )
-data = response.json()
-df = build_payload_df(data, "Lulu", "Dinner")
-
-dbi.conf('wfresh_db')
-conn = dbi.connect()
-cur = conn.cursor()
-cols = ["did", "name", "description"] 
-rows = list(df[cols].itertuples(index=False, name=None))
-sql = "INSERT IGNORE INTO dish (did,name,description) VALUES (%s, %s, %s)"  # MySQL param style
-cur.executemany(sql, rows)
-conn.commit()
+def insert_dishes(df: pd.DataFrame):
+    """Insert dishes into the dish table."""
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    cur = conn.cursor()
+    cols = ["did", "name", "description"] 
+    rows = list(df[cols].itertuples(index=False, name=None))
+    cur.executemany("INSERT IGNORE INTO dish (did,name,description) VALUES (%s, %s, %s)"
+                    , rows)
+    conn.commit()
+    
+if __name__ == '__main__':
+    params = {
+        95:[145, 146, 311], # Bates: Breakfast, Lunch, Dinner
+        131:[261, 262, 263], # StoneDavis: Breakfast, Lunch, Dinner
+        96:[148, 149, 312], # Lulu: Breakfast, Lunch, Dinner
+        97:[153, 154, 310] # Tower: Breakfast, Lunch, Dinner
+    }
+    for key, value in params.items():
+        dhall = key
+        for meal in value:
+            date = date.today() 
+            df = get_payload_df(date, dhall, meal)
+            insert_dishes(df)
