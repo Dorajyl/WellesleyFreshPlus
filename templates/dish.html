@@ -1,18 +1,102 @@
+{% extends "base.html" %}
 
-<!doctype html>
-<html lang='en'>
-<head>
-    <meta charset='utf-8'>
-    <meta name=author content="Dora, Zoe, Joey">
-    <title>{{name}}</title>
-    <link rel='stylesheet' href="{{url_for('static', filename = 'style.css')}}">
+{% block main_content %}
+<div class="dish-page">
+    <h1>Dish Details</h1>
+    
+    {% if dish %}
+    <div class="dish-info">
+        <h2>{% if dish.name %}{{ dish.name }}{% else %}Dish #{{ dish.did }}{% endif %}</h2>
+        <p><strong>Description:</strong> {{ dish.description or 'No description available' }}</p>
+    </div>
+    
+    <hr>
+    
+    <h2>Comments</h2>
+    
+    <!-- Comment & Picture Form -->
+    <div class="comment-form">
+        <h3>Add a Comment</h3>
+        <form method="POST" 
+              action="{{ url_for('get_dish', did=dish.did) }}"
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="type">Rating:</label>
+                <select id="type" name="type" required>
+                    <option value="yum">Yum 😋</option>
+                    <option value="yuck">Yuck 🤮</option>
+                </select>
+            </div>
+            
+            <!-- Comment -->
+            <div class="form-group">
+                <label for="comment">Your Comment:</label>
+                <textarea id="comment" name="comment" rows="4" 
+                          placeholder="Share your thoughts about this dish..."></textarea>
+            </div>
 
-</head>
-<body>      
+            <!-- Picture -->
+            <div class="form-group">
+                <label for="picture">Upload a picture:</label>
+                <input type="file" id="picture" name="picture">
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <hr>
+    
+    <!-- Existing Comments -->
+    <div class="comments-section">
+        <h3>All Comments ({{ comments|length }})</h3>
+        
+        {% if comments %}
+            {% for comment in comments %}
+            <div class="comment-item">
+                <div class="comment-header">
+                    <span class="comment-type {{ comment[2] }}">
+                        {% if comment[2] == 'yum' %}
+                            😋 Yum
+                        {% else %}
+                            🤮 Yuck
+                        {% endif %}
+                    </span>
+                    <span class="comment-author">
+                        {% if comment[5] %}
+                            by {{ comment[5] }}
+                        {% else %}
+                            by User #{{ comment[1] }}
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="comment-text">
+                    {{ comment[3] }}
+                </div>
+                {% if comment[4] %}
+                <div class="comment-image">
+                    <img src="{{ url_for('static', filename='uploads/' ~ comment[4]) }}"
+                         alt="Dish picture"
+                         style="max-width: 200px;">
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endif %}
+    </div>
+    
+    {% else %}
+    <p>Dish not found.</p>
+    {% endif %}
+</div>
 
-<h1 class="Dish">{{dish["name"]}}</h1>
-
-<p>{{dish["description"]}}</p>
-
-</body>
-</html>
+<style>
+.comment-text {
+    padding-left: 20px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+</style>
+{% endblock %}
