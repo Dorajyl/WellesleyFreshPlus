@@ -48,6 +48,17 @@
   {% endif %}
 {% endwith %}
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const loader = document.getElementById("menu-loader");
+    const content = document.getElementById("menu-content");
+    if (loader) loader.style.display = "none";
+    if (content) content.style.display = "block";
+  });
+</script>
+
+
 {% block main_content %}
 <h1>Welcome!</h1>
 {% endblock %}

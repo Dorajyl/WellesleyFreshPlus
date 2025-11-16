@@ -121,3 +121,132 @@ nav button:hover, button:focus, nav a:hover, nav a:focus {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* overall page background */
+.menu-page {
+  background-color: #f7e7c6; /* warm beige */
+  padding: 2rem 1rem 3rem;
+}
+
+/* header pill */
+.menu-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.menu-header-pill {
+  background-color: #f4a425; /* orange */
+  padding: 0.4rem 1.4rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* day cards (one per date) */
+.days-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.day-card {
+  background: transparent;
+}
+
+/* day title */
+.day-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.day-label {
+  font-family: "Comic Sans MS", system-ui, sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.day-date {
+  font-size: 0.95rem;
+  color: #6b5a3a;
+}
+
+/* meal section */
+.meal-section {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.meal-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* row of dining halls for that meal */
+.halls-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* hall card */
+.hall-card {
+  border-radius: 18px;
+  border: 2px dotted #9a8e5a;
+  padding: 1rem 1.25rem;
+  background-color: #fdf4dd;
+  position: relative;
+}
+
+/* pill-like hall header */
+.hall-header {
+  position: absolute;
+  top: -0.9rem;
+  left: 1.5rem;
+  background-color: #f7e7c6;
+  padding: 0 0.7rem;
+}
+
+.hall-name {
+  border-radius: 999px;
+  border: 2px solid #9a8e5a;
+  padding: 0.15rem 0.7rem;
+  background-color: #f7e7c6;
+  font-weight: 700;
+}
+
+/* dishes */
+.dish-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+}
+
+.dish-item + .dish-item {
+  margin-top: 0.25rem;
+}
+
+.dish-item a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.dish-item a:hover {
+  text-decoration: underline;
+}
+
+.menu-loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 2000;
+}

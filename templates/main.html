@@ -1,95 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wellesley Fresh + </title>
-  <meta name="description" content="An upgrade of the Wellesley AVI Fresh Website">
+{% extends "base.html" %}
 
-  <!-- TailwindCSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+{% block main_content %}
+<!-- Loader -->
+<div id="menu-loader" class="menu-loader">
+  Loading menus…
+</div>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<div class="menu-page">
 
-  <!-- Page header -->
-  <header class="flex flex-col items-center justify-center h-32 mt-4">
-    <h1 class="text-3xl font-bold">Wellesley Fresh + </h1>
-    <p class="text-gray-600">Upgrading the Wellesley AVI Fresh Website</p>
-  </header>
-
-  <!-- Main content -->
-  <main class="max-w-4xl mx-auto mt-8 p-4 space-y-8">
-    
-    <!-- About Section -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-2">About</h2>
-      <p>Welcome to the Wellesley Fresh + project! This page showcases menus, updates, and more.</p>
-    </section>
-
-    <!-- Menu Section (Felp functionality can be added later) -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-2">Menu</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Breakfast</li>
-        <li>Lunch</li>
-        <li>Dinner</li>
-      </ul>
-    </section>
-
-    <!-- DishDash Button -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-2">DishDash</h2>
-      <p>Discuss meals anonymously with other students!</p>
-      <a href="dishdash.html" class="inline-block mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-        Go to DishDash
-      </a>
-    </section>
-
-  </main>
-
-  <!-- Wellesley Feast Sidebar -->
-  <div id="feastSidebar" class="fixed right-0 top-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
-    <div class="p-4 border-b flex justify-between items-center">
-      <h3 class="font-bold text-lg">Wellesley Feast</h3>
-      <button id="closeFeast" class="text-gray-500 hover:text-gray-800">&times;</button>
-    </div>
-    <div class="p-4 space-y-4">
-      <p>Broadcast free food events on campus!</p>
-      <input type="text" placeholder="Event Name" class="w-full border rounded p-2">
-      <input type="text" placeholder="Location" class="w-full border rounded p-2">
-      <input type="date" class="w-full border rounded p-2">
-      <textarea placeholder="Details" class="w-full border rounded p-2"></textarea>
-      <button class="w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Submit</button>
-    </div>
+  <!-- Header pill for 'Today' / week -->
+  <div class="menu-header">
+    <span class="menu-header-pill">This Week</span>
   </div>
 
-  <!-- Wellesley Feast Button -->
-  <button id="feastBtn" class="fixed right-4 bottom-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 z-40">
-    Wellesley Feast
-  </button>
+  <div class="days-wrapper">
+    {% for day in days %}
+      <section class="day-card">
+        <div class="day-title-row">
+          <h2 class="day-label">
+            {% if loop.index0 == 0 %}
+              Today
+            {% else %}
+              {{ day.date.strftime("%A") }}
+            {% endif %}
+          </h2>
+          <span class="day-date">{{ day.date.strftime("%b %-d") }}</span>
+        </div>
 
-  <script>
-    const feastBtn = document.getElementById('feastBtn');
-    const feastSidebar = document.getElementById('feastSidebar');
-    const closeFeast = document.getElementById('closeFeast');
+        {% for meal in meal_order %}
+          {% set halls = day.menus.get(meal, {}) %}
+          {% if halls %}
+            <div class="meal-section">
+              <h3 class="meal-name">{{ meal }}</h3>
 
-    feastBtn.addEventListener('click', () => {
-      feastSidebar.classList.remove('translate-x-full');
-    });
+              <div class="halls-row">
+                {% for hall_name, dishes in halls.items() %}
+                  <article class="hall-card">
+                    <div class="hall-header">
+                      <span class="hall-name">{{ hall_name }}</span>
+                    </div>
+                    <ul class="dish-list">
+                      {% for dish in dishes %}
+                        <li class="dish-item">
+                          <a href="{{ url_for('get_dish', did=dish.did if dish.did is defined else dish['did']) }}">
+                            {{ dish.name if dish.name is defined else dish['name'] }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </article>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </section>
+    {% endfor %}
+  </div>
 
-    closeFeast.addEventListener('click', () => {
-      feastSidebar.classList.add('translate-x-full');
-    });
-  </script>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 mt-12 mb-4">
-    &copy; 2025 Wellesley Fresh +
-  </footer>
-
-</body>
-</html>
+</div>
+{% endblock %}
