@@ -5,6 +5,9 @@ from werkzeug.utils import secure_filename
 import os
 import secrets
 import cs304dbi as dbi
+import requests
+from datetime import date, datetime, timedelta
+import helper
 
 app = Flask(__name__)
 
@@ -24,12 +27,83 @@ app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
 @app.route('/')
 def index():
-    return render_template('main.html', page_title='Main Page')
+    DINING_HALLS = {
+        95: {  # Bates
+            "name": "Bates",
+            "meals": {
+                "Breakfast": 145,
+                "Lunch": 146,
+                "Dinner": 311,
+            },
+        },
+        131: {  # Stone D
+            "name": "Stone D",
+            "meals": {
+                "Breakfast": 261,
+                "Lunch": 262,
+                "Dinner": 263,
+            },
+        },
+        96: {  # Lulu
+            "name": "Lulu",
+            "meals": {
+                "Breakfast": 148,
+                "Lunch": 149,
+                "Dinner": 312,
+            },
+        },
+        97: {  # Tower
+            "name": "Tower",
+            "meals": {
+                "Breakfast": 153,
+                "Lunch": 154,
+                "Dinner": 310,
+            },
+        },
+    }
+    MEALS = ["Breakfast", "Lunch", "Dinner"]
+
+    today = date.today()
+    now = datetime.now()
+    meal_order = ["Breakfast", "Lunch", "Dinner"] # helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
+
+    days = []
+    for offset in range(7):
+        d = today + timedelta(days=offset)
+        label = "Today" if offset == 0 else d.strftime("%A %b %-d")
+
+        # menus[meal][hall_name] = list of dishes
+        menus = {}
+        for meal in MEALS:
+            menus[meal] = {}
+            for dhall_id, info in DINING_HALLS.items():
+                dishes = helper.fetch_menu_for(d, dhall_id, meal)
+                if dishes:
+                    menus[meal][info["name"]] = dishes
+
+        days.append(
+            {
+                "date": d,
+                "label": label,
+                "menus": menus,
+            }
+        )
+
+    return render_template(
+        "main.html",
+        days=days,
+        meal_order=meal_order,
+    )
 
 @app.route('/about/')
 def about():
     flash('this is a flashed message')
     return render_template('about.html', page_title='About Us')
+
+@app.route('/dishdash/')
+def dishdash():
+    flash('this is a flashed message')
+    return render_template('dishdash.html', page_title='Dish Dash')
 
 # Testing data: hard boil egg 39186
 @app.route('/dish/<did>', methods=['GET', 'POST'])

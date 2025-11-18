@@ -1,43 +1,89 @@
 <!doctype html>
 <html lang='en'>
 <head>
-    <meta charset='utf-8'>
-    <!-- for mobile-friendly pages -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name=author content="">
-    <title>{{ page_title }}</title>
-    <link rel='stylesheet' href="{{url_for('static', filename = 'style.css')}}">
-    {% block head_stuff %} {% endblock %}
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name=author content="Dora, Joey, Zoe">
+  <title>{{ page_title }}</title>
+  <link rel='stylesheet' href="{{url_for('static', filename = 'style.css')}}">
+  {% block head_stuff %}{% endblock %}
 </head>
 <body>
 
 {% block nav %}
 <nav>
   <ul>
-    <li><a href="{{url_for('index')}}">Home</a></li>
-    <li><a href="{{url_for('about')}}">About</a></li>
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('dishdash') }}">DishDash</a></li>
+    <!-- final list item that triggers the sidebar -->
+    <li><a href="#" id="feastLink">Wellesley Feast</a></li>
   </ul>
 </nav>
 {% endblock %}
 
+<!-- Wellesley Feast Sidebar -->
+<div id="feastSidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3>Wellesley Feast</h3>
+    <button id="closeFeast" class="close-btn">&times;</button>
+  </div>
+  <div class="sidebar-body">
+    <p>Broadcast free food events on campus!</p>
+    <input type="text" placeholder="Event Name">
+    <input type="text" placeholder="Location">
+    <input type="date">
+    <textarea placeholder="Details"></textarea>
+    <button>Submit</button>
+  </div>
+</div>
 
 {% with messages = get_flashed_messages() %}
-{% if messages %}
-<div id="messages">
-  {% for msg in messages %}
-  <p>{{msg}}</p>
-  {% endfor %}
-</div>
-{% endif %}
+  {% if messages %}
+    <div id="messages">
+      {% for msg in messages %}
+        <p>{{ msg }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endwith %}
-            
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const loader = document.getElementById("menu-loader");
+    const content = document.getElementById("menu-content");
+    if (loader) loader.style.display = "none";
+    if (content) content.style.display = "block";
+  });
+</script>
+
+
 {% block main_content %}
 <h1>Welcome!</h1>
 {% endblock %}
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  {% block end_scripts %}
-  {% endblock %}
-  
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script>
+  const feastLink = document.getElementById('feastLink');
+  const feastSidebar = document.getElementById('feastSidebar');
+  const closeFeast = document.getElementById('closeFeast');
+
+  // open sidebar when clicking nav item
+  feastLink.addEventListener('click', (e) => {
+    e.preventDefault();               // don't navigate to "#"
+    feastSidebar.classList.add('open');
+  });
+
+  // close sidebar when clicking X
+  closeFeast.addEventListener('click', () => {
+    feastSidebar.classList.remove('open');
+  });
+</script>
+
+
+{% block end_scripts %}{% endblock %}
+
 </body>
 </html>
