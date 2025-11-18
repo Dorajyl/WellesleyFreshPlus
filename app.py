@@ -25,6 +25,22 @@ print(dbi.conf('wfresh_db'))
 # This gets us better error messages for certain common request errors
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
+# Picture upload: Save images into static/uploads/
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB maxumum
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    '''Return True if the filename has an allowed extension.'''
+    return (
+        '.' in filename and
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    )
+
+# Ensure the uploads directory exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
 @app.route('/')
 def index():
     DINING_HALLS = {
@@ -149,10 +165,12 @@ def get_dish(did):
                 filepath = filename
             
             # Insert comment
-            cur.execute('''INSERT INTO comments (owner, type, comment, dish, filepath)
-                           VALUES (%s, %s, %s, %s, %s)''',
-                        (owner_id, comment_type, comment_text, did, filepath))
-            conn.commit()
+                cur.execute(
+                    '''INSERT INTO dish_picture (did, filename)
+                       VALUES (%s, %s)''',
+                    (did, filepath)
+                )
+                conn.commit()
             flash('Comment/Picture added successfully!')
             # Redirect to avoid duplicate submissions on refresh
             return redirect(url_for('get_dish', did=did))
@@ -179,7 +197,57 @@ def get_dish(did):
                    ORDER BY c.commentid DESC''', (did,))
     comments = cur.fetchall()
     
-    return render_template('dish.html', dish=dish, comments=comments)
+    cur.execute('SELECT pid, filename FROM dish_picture WHERE did = %s', (did,))
+    dish_pics = cur.fetchall()
+    
+    return render_template('dish.html', dish=dish, comments=comments, dish_pics=dish_pics)
+
+# Delete pictures
+@app.route('/dish/<did>/delete_pic/<int:pid>', methods=['POST'])
+def delete_dish_pic(did, pid):
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    cur = conn.cursor()
+
+    # look up the filename for the pid + did
+    cur.execute(
+        'SELECT filename FROM dish_picture WHERE pid = %s AND did = %s',
+        (pid, did)
+    )
+    row = cur.fetchone()
+    if row is None:
+        flash('Picture not found')
+        return redirect(url_for('get_dish', did=did))
+
+    filename = row[0]
+
+    # delete the row from dish_picture
+    cur.execute('DELETE FROM dish_picture WHERE pid = %s', (pid,))
+    conn.commit()
+
+    # clear comment.filepath that uses this filename
+    cur.execute(
+        'UPDATE comments SET filepath = NULL WHERE dish = %s AND filepath = %s',
+        (did, filename)
+    )
+    conn.commit()
+
+    # delete the actual file from static/uploads
+    cur.execute(
+        'SELECT COUNT(*) FROM dish_picture WHERE filename = %s',
+        (filename,)
+    )
+    count = cur.fetchone()[0]
+
+    if count == 0:  # only delete file if no more db references
+        path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        try:
+            os.remove(path)
+        except FileNotFoundError:
+            pass  # if it is already gone, ignore
+
+    flash('Picture deleted.')
+    return redirect(url_for('get_dish', did=did))
 
 if __name__ == '__main__':
     import sys, os

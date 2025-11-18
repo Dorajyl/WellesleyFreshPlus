@@ -9,14 +9,36 @@
         <h2>{% if dish.name %}{{ dish.name }}{% else %}Dish #{{ dish.did }}{% endif %}</h2>
         <p><strong>Description:</strong> {{ dish.description or 'No description available' }}</p>
     </div>
+
+    <hr>
+
+    <h2>Photos of this dish</h2>
+    {% if dish_pics %}
+        <div class="dish-photos">
+            {% for pic in dish_pics %}
+                <div class="dish-photo-item">
+                    <img src="{{ url_for('static', filename='uploads/' ~ pic[1]) }}"
+                        alt="Dish photo"
+                        style="max-width: 200px; margin: 5px;">
+
+                    <form method="POST"
+                        action="{{ url_for('delete_dish_pic', did=dish.did, pid=pic[0]) }}"
+                        style="display:inline">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No photos yet. Be the first to upload one!</p>
+    {% endif %}
     
     <hr>
     
-    <h2>Comments</h2>
+    <h2>Add a Comment or a Picture</h2>
     
     <!-- Comment & Picture Form -->
     <div class="comment-form">
-        <h3>Add a Comment</h3>
         <form method="POST" 
               action="{{ url_for('get_dish', did=dish.did) }}"
               enctype="multipart/form-data">
