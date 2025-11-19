@@ -35,9 +35,27 @@
     
     <hr>
     
-    <h2>Add a Comment or a Picture</h2>
+    <h2>Upload a Picture</h2>
     
-    <!-- Comment & Picture Form -->
+    <!-- Picture Upload Form -->
+    <div class="picture-form">
+        <form method="POST" 
+              action="{{ url_for('get_dish', did=dish.did) }}"
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="picture">Upload a picture:</label>
+                <input type="file" id="picture" name="picture" required>
+            </div>
+            
+            <button type="submit">Upload Picture</button>
+        </form>
+    </div>
+    
+    <hr>
+    
+    <h2>Add a Comment</h2>
+    
+    <!-- Comment Form -->
     <div class="comment-form">
         <form method="POST" 
               action="{{ url_for('get_dish', did=dish.did) }}"
@@ -50,20 +68,13 @@
                 </select>
             </div>
             
-            <!-- Comment -->
             <div class="form-group">
                 <label for="comment">Your Comment:</label>
                 <textarea id="comment" name="comment" rows="4" 
-                          placeholder="Share your thoughts about this dish..."></textarea>
-            </div>
-
-            <!-- Picture -->
-            <div class="form-group">
-                <label for="picture">Upload a picture:</label>
-                <input type="file" id="picture" name="picture">
+                          placeholder="Share your thoughts about this dish..." required></textarea>
             </div>
             
-            <button type="submit">Submit</button>
+            <button type="submit">Submit Comment</button>
         </form>
     </div>
     
