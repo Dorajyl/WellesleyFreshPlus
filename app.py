@@ -27,7 +27,7 @@ app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
 # Picture upload: Save images into static/uploads/
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
-app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 1MB maxumum
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB maximum
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -80,15 +80,17 @@ def index():
     MEALS = ["Breakfast", "Lunch", "Dinner"]
 
     today = date.today()
-    now = datetime.now()
-    meal_order = ["Breakfast", "Lunch", "Dinner"] # helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
+    meal_order = ["Breakfast", "Lunch", "Dinner"] 
+    # now = datetime.now()
+    # helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
 
     days = []
     for offset in range(7):
+        # label and date for the day
         d = today + timedelta(days=offset)
         label = "Today" if offset == 0 else d.strftime("%A %b %-d")
 
-        # menus[meal][hall_name] = list of dishes
+        # menus[meal_time][hall_name] = list of dishes
         menus = {}
         for meal in MEALS:
             menus[meal] = {}
