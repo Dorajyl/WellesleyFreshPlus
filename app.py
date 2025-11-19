@@ -164,13 +164,24 @@ def get_dish(did):
                 file.save(fullpath)
                 filepath = filename
             
-            # Insert comment
+            # Insert comment if comment_text is provided
+            if comment_text:
+                cur.execute(
+                    '''INSERT INTO comments (dish, owner, type, comment, filepath)
+                       VALUES (%s, %s, %s, %s, %s)''',
+                    (did, owner_id, comment_type, comment_text, filepath)
+                )
+                conn.commit()
+            
+            # Insert picture into dish_picture table if there's a picture but no comment
+            if filepath and not comment_text:
                 cur.execute(
                     '''INSERT INTO dish_picture (did, filename)
                        VALUES (%s, %s)''',
                     (did, filepath)
                 )
                 conn.commit()
+            
             flash('Comment/Picture added successfully!')
             # Redirect to avoid duplicate submissions on refresh
             return redirect(url_for('get_dish', did=did))
@@ -247,6 +258,55 @@ def delete_dish_pic(did, pid):
             pass  # if it is already gone, ignore
 
     flash('Picture deleted.')
+    return redirect(url_for('get_dish', did=did))
+
+# Delete comments
+@app.route('/dish/<did>/delete_comment/<int:commentid>', methods=['POST'])
+def delete_comment(did, commentid):
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    cur = conn.cursor()
+
+    # look up the comment and its filepath
+    cur.execute(
+        'SELECT filepath FROM comments WHERE commentid = %s AND dish = %s',
+        (commentid, did)
+    )
+    row = cur.fetchone()
+    if row is None:
+        flash('Comment not found')
+        return redirect(url_for('get_dish', did=did))
+
+    filename = row[0]
+
+    # delete the comment from comments table
+    cur.execute('DELETE FROM comments WHERE commentid = %s', (commentid,))
+    conn.commit()
+
+    # if the comment had a filepath, check if we should delete the file
+    if filename:
+        # check if this filename is still referenced in dish_picture or other comments
+        cur.execute(
+            'SELECT COUNT(*) FROM dish_picture WHERE filename = %s',
+            (filename,)
+        )
+        dish_pic_count = cur.fetchone()[0]
+        
+        cur.execute(
+            'SELECT COUNT(*) FROM comments WHERE filepath = %s',
+            (filename,)
+        )
+        comment_count = cur.fetchone()[0]
+
+        # only delete file if no more db references
+        if dish_pic_count == 0 and comment_count == 0:
+            path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            try:
+                os.remove(path)
+            except FileNotFoundError:
+                pass  # if it is already gone, ignore
+
+    flash('Comment deleted.')
     return redirect(url_for('get_dish', did=did))
 
 if __name__ == '__main__':
