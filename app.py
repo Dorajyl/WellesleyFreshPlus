@@ -27,7 +27,7 @@ app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
 # Picture upload: Save images into static/uploads/
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
-app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1MB maxumum
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 1MB maxumum
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
