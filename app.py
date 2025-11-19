@@ -41,7 +41,7 @@ def allowed_file(filename):
 # Ensure the uploads directory exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-@app.route('/')
+@app.route('/home/')
 def index():
     DINING_HALLS = {
         95: {  # Bates
@@ -122,7 +122,7 @@ def index():
         meal_order=meal_order,
     )
 
-@app.route('/about/')
+@app.route('/')
 def about():
     return render_template('about.html', page_title='About Us')
 
