@@ -84,20 +84,29 @@ def index():
     # now = datetime.now()
     # helper.get_meal_order(now) # reorder meals so current meal(dinner/lunch..) is first
 
+    # Fetch week menu data (uses cache if available)
+    week_menu = helper.fetch_week_menu(today)
+
     days = []
     for offset in range(7):
         # label and date for the day
         d = today + timedelta(days=offset)
         label = "Today" if offset == 0 else d.strftime("%A %b %-d")
+        date_key = d.isoformat()  # '2025-11-15'
 
+        # Get menu data from cache/fetched data
         # menus[meal_time][hall_name] = list of dishes
         menus = {}
-        for meal in MEALS:
-            menus[meal] = {}
-            for dhall_id, info in DINING_HALLS.items():
-                dishes = helper.fetch_menu_for(d, dhall_id, meal)
-                if dishes:
-                    menus[meal][info["name"]] = dishes
+        if date_key in week_menu:
+            menus = week_menu[date_key]
+        else:
+            # Fallback: if date not in cache, fetch individually (shouldn't happen normally)
+            for meal in MEALS:
+                menus[meal] = {}
+                for dhall_id, info in DINING_HALLS.items():
+                    dishes = helper.fetch_menu_for(d, dhall_id, meal)
+                    if dishes:
+                        menus[meal][info["name"]] = dishes
 
         days.append(
             {
