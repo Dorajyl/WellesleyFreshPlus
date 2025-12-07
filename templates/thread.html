@@ -4,12 +4,27 @@
 <main>
   <a href="{{ url_for('dishdash') }}">&larr; Back to DishDash</a>
 
-  <!-- Thread header -->
-  <section style="margin-top:1rem;">
-    <h1>{{ thread.description }}</h1>
-    <p style="font-size:0.9rem; color:#555;">
-      Started by {{ thread.owner_name or 'Anonymous' }}
-    </p>
+  <!-- Thread header with optional delete -->
+  <section style="margin-top:1rem; display:flex; justify-content:space-between; align-items:flex-start;">
+    <div>
+      <h1>{{ thread.description }}</h1>
+      <p style="font-size:0.9rem; color:#555;">
+        Started by {{ thread.owner_name or 'Anonymous' }}
+      </p>
+    </div>
+
+    {% if current_uid and thread.owner_id == current_uid %}
+      <form
+        method="post"
+        action="{{ url_for('delete_thread', thid=thread.thid) }}"
+        onsubmit="return confirm('Delete this entire thread and all messages?');"
+      >
+        <button type="submit"
+                style="border:none; background:none; color:#d00; font-size:0.85rem; cursor:pointer;">
+          delete thread
+        </button>
+      </form>
+    {% endif %}
   </section>
 
   <!-- Top-level message form -->
@@ -39,26 +54,31 @@
       <ul style="list-style:none; padding-left:0;">
         {% for m in messages recursive %}
           <li style="border-left:2px solid #ddd; padding-left:0.75rem; margin-top:0.75rem;">
+
             <div style="font-size:0.9rem; color:#555; display:flex; gap:0.5rem; align-items:center;">
               <span>
                 <strong>{{ m.sender_name or 'Anonymous' }}</strong>
-                <span style="margin-left:0.5rem; font-size:0.8rem;">
-                  {{ m.sent_at }}
-                </span>
+                {% if m.sent_at %}
+                  <span style="margin-left:0.5rem; font-size:0.8rem;">
+                    {{ m.sent_at }}
+                  </span>
+                {% endif %}
               </span>
 
-              <!-- Delete button -->
-              <form
-                method="post"
-                action="{{ url_for('delete_message', thid=thread.thid, mid=m.mid) }}"
-                style="display:inline;"
-                onsubmit="return confirm('Delete this message and all its replies?');"
-              >
-                <button type="submit"
-                        style="border:none; background:none; color:#d00; font-size:0.8rem; cursor:pointer; padding:0;">
-                  delete
-                </button>
-              </form>
+              {% if current_uid and m.sender == current_uid %}
+                <!-- Delete button only for owner -->
+                <form
+                  method="post"
+                  action="{{ url_for('delete_message', thid=thread.thid, mid=m.mid) }}"
+                  style="display:inline;"
+                  onsubmit="return confirm('Delete this message and all its replies?');"
+                >
+                  <button type="submit"
+                          style="border:none; background:none; color:#d00; font-size:0.8rem; cursor:pointer; padding:0;">
+                    delete
+                  </button>
+                </form>
+              {% endif %}
             </div>
 
             <div style="margin-top:0.25rem; white-space:pre-wrap;">
