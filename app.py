@@ -126,6 +126,59 @@ def index():
 def about():
     return render_template('about.html', page_title='About Us')
 
+# Login and Logout routes
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    dbi.conf('wfresh_db')
+    
+    if request.method == 'POST':
+        email_handle = request.form.get('email_handle', '').strip()
+        
+        if not email_handle:
+            flash('Please enter your email handle')
+            return redirect(url_for('about'))
+        
+        conn = dbi.connect()
+        cur = conn.cursor()
+        
+        # check if user exists with this email handle
+        cur.execute('SELECT uid, name, email FROM users WHERE name = %s OR email = %s OR email LIKE %s', 
+                   (email_handle, email_handle, f'{email_handle}@%'))
+        user = cur.fetchone()
+        
+        if user is None:
+            # First time login - create new user
+            email = f'{email_handle}@wellesley.edu'
+            cur.execute('''INSERT INTO users (name, email) 
+                           VALUES (%s, %s)''',
+                       (email_handle, email))
+            conn.commit()
+            user_id = cur.lastrowid
+            
+            # Fetch the newly created user
+            cur.execute('SELECT uid, name, email FROM users WHERE uid = %s', (user_id,))
+            user = cur.fetchone()
+            flash(f'Welcome! Your account has been created. User ID: {user_id}')
+        else:
+            flash(f'Welcome back, {user[1]}!')
+        
+        # Store user info in session
+        session['uid'] = user[0]
+        session['name'] = user[1]
+        session['email'] = user[2]
+        
+        conn.close()
+        return redirect(url_for('about'))
+    
+    # GET request - just redirect to about page
+    return redirect(url_for('about'))
+
+@app.route('/logout/')
+def logout():
+    session.clear()
+    flash('You have been logged out')
+    return redirect(url_for('about'))
+
 @app.route('/dishdash/', methods=['GET', 'POST'])
 def dishdash():
     """DishDash front page: list threads and create new ones."""
@@ -138,7 +191,11 @@ def dishdash():
             flash('Please write something for your thread.')
             return redirect(url_for('dishdash'))
 
-        owner_id = session.get('uid', 1) # 1 is anonymous user/ test user
+        # Get user ID from session (logged in user)
+        owner_id = session.get('uid')
+        if owner_id is None:
+            flash('Please log in to create a thread')
+            return redirect(url_for('about'))
 
         # 1) create post
         cur.execute(
@@ -197,7 +254,11 @@ def view_thread(thid):
             # reload same thread page
             return redirect(url_for('view_thread', thid=thid))
 
-        sender_id = session.get('uid', 1) # 1 is anonymous user/ test user
+        # Get user ID from session (logged in user)
+        sender_id = session.get('uid')
+        if sender_id is None:
+            flash('Please log in to post a message')
+            return redirect(url_for('about'))
         # insert new message to database
         cur.execute(
             '''INSERT INTO messages (replyto, sender, content, parentthread)
@@ -345,21 +406,24 @@ def get_dish(did):
         if not comment_text and (not file or file.filename == ''):
             flash('You must enter a comment or upload a picture')
         else:
-            # Get or create an anonymous user for comments without owner
-            # First, try to find an "Anonymous" user
-            cur.execute('SELECT uid FROM users WHERE name = %s OR email = %s LIMIT 1', 
-                       ('Anonymous', 'anonymous@example.com'))
-            anonymous_user = cur.fetchone()
+            # Get user ID from session (logged in user)
+            owner_id = session.get('uid')
             
-            if anonymous_user is None:
-                # Create an anonymous user if it doesn't exist
-                cur.execute('''INSERT INTO users (name, email) 
-                               VALUES (%s, %s)''',
+            # If user is not logged in, create or get anonymous user as fallback
+            if owner_id is None:
+                cur.execute('SELECT uid FROM users WHERE name = %s OR email = %s LIMIT 1', 
                            ('Anonymous', 'anonymous@example.com'))
-                conn.commit()
-                owner_id = cur.lastrowid
-            else:
-                owner_id = anonymous_user[0]
+                anonymous_user = cur.fetchone()
+                
+                if anonymous_user is None:
+                    # Create an anonymous user if it doesn't exist
+                    cur.execute('''INSERT INTO users (name, email) 
+                                   VALUES (%s, %s)''',
+                               ('Anonymous', 'anonymous@example.com'))
+                    conn.commit()
+                    owner_id = cur.lastrowid
+                else:
+                    owner_id = anonymous_user[0]
                 
             # Picture upload path
             filepath = None

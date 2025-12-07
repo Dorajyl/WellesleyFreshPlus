@@ -988,3 +988,99 @@ hr {
         align-items: flex-start;
     }
 }
+
+/* ============================================
+   About Page / Login Styles
+   ============================================ */
+
+.about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+}
+
+.login-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border-light);
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.user-info p {
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.logout-btn:hover {
+    background: var(--color-secondary);
+    color: white;
+    text-decoration: none;
+}
+
+.login-form-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background: var(--color-secondary);
+}
+
+.login-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    text-align: center;
+    font-style: italic;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
