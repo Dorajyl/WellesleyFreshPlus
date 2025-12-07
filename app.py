@@ -290,7 +290,7 @@ def delete_comment(did, commentid):
 if __name__ == '__main__':
     import sys, os
     if len(sys.argv) > 1:
-        # arg, if any, is the desired port number
+        # arg, if any, is then the desired port number
         port = int(sys.argv[1])
         assert(port>1024)
     else:
