@@ -4,6 +4,7 @@ import requests
 import json
 import os
 
+#------- For main page functionality and the cacheing system -----------------------------------
 AVI_API = "https://dish.avifoodsystems.com/api/menu-items/week"
 
 # Dining hall + meal IDs from your earlier code
@@ -42,7 +43,6 @@ DINING_HALLS = {
         },
     }
 MEALS = ["Breakfast", "Lunch", "Dinner"]
-
 
 def get_meal_order(now: datetime) -> list[str]:
     """Reorder Breakfast/Lunch/Dinner so the 'current' meal shows first."""
@@ -184,3 +184,4 @@ def fetch_week_menu(start_date: date = None) -> dict:
     save_menu_cache(week_menu)
     
     return week_menu
+

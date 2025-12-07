@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<main>
+  <a href="{{ url_for('dishdash') }}">&larr; Back to DishDash</a>
+
+  <!-- Thread header -->
+  <section style="margin-top:1rem;">
+    <h1>{{ thread.description }}</h1>
+    <p style="font-size:0.9rem; color:#555;">
+      Started by {{ thread.owner_name or 'Anonymous' }}
+    </p>
+  </section>
+
+  <!-- Top-level message form -->
+  <section style="margin-top:1rem;">
+    <h2>Post a message</h2>
+    <form method="post">
+      <!-- Empty replyto = top-level message -->
+      <input type="hidden" name="replyto" value="">
+      <textarea
+        name="content"
+        rows="3"
+        cols="70"
+        placeholder="Write your message..."
+        required
+      ></textarea><br>
+      <button type="submit" style="margin-top:0.5rem;">Post</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- Messages (nested) -->
+  <section>
+    <h2>Messages</h2>
+
+    {% if messages %}
+      <ul style="list-style:none; padding-left:0;">
+        {% for m in messages recursive %}
+          <li style="border-left:2px solid #ddd; padding-left:0.75rem; margin-top:0.75rem;">
+            <div style="font-size:0.9rem; color:#555; display:flex; gap:0.5rem; align-items:center;">
+              <span>
+                <strong>{{ m.sender_name or 'Anonymous' }}</strong>
+                <span style="margin-left:0.5rem; font-size:0.8rem;">
+                  {{ m.sent_at }}
+                </span>
+              </span>
+
+              <!-- Delete button -->
+              <form
+                method="post"
+                action="{{ url_for('delete_message', thid=thread.thid, mid=m.mid) }}"
+                style="display:inline;"
+                onsubmit="return confirm('Delete this message and all its replies?');"
+              >
+                <button type="submit"
+                        style="border:none; background:none; color:#d00; font-size:0.8rem; cursor:pointer; padding:0;">
+                  delete
+                </button>
+              </form>
+            </div>
+
+            <div style="margin-top:0.25rem; white-space:pre-wrap;">
+              {{ m.content }}
+            </div>
+
+            <!-- Reply form under each message -->
+            <details style="margin-top:0.25rem;">
+              <summary style="cursor:pointer; font-size:0.85rem; color:#007bff;">
+                Reply
+              </summary>
+              <form method="post" style="margin-top:0.25rem;">
+                <input type="hidden" name="replyto" value="{{ m.mid }}">
+                <textarea
+                  name="content"
+                  rows="2"
+                  cols="60"
+                  placeholder="Reply..."
+                  required
+                ></textarea><br>
+                <button type="submit" style="margin-top:0.25rem;">Post reply</button>
+              </form>
+            </details>
+
+            {% if m.children %}
+              <ul style="list-style:none; padding-left:1rem; margin-top:0.25rem;">
+                {{ loop(m.children) }}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No messages yet. Be the first to comment!</p>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}

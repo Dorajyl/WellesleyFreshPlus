@@ -1,16 +1,52 @@
 {% extends "base.html" %}
+
 {% block main_content %}
-    <!-- Page header -->
-    <header>
-        <h1> DishDash </h1>
-        <p> Discuss meals anonymously with other students!</p>
-    </header>
-    
-    <!-- Main content -->
-    <main>
-        <section>
-        <h2>Welcome to DishDash!</h2>
-        <p>Here, you can share your thoughts on the meals served on campus and read what others have to say. Feel free to post your comments anonymously and engage in discussions about your dining experiences!</p>
-        </section>
-    </main>
+<main>
+  <header>
+    <h1>DishDash Forum</h1>
+    <p>Talk about campus dining, rants, tips, and everything in between.</p>
+  </header>
+
+  <!-- New thread form -->
+  <section style="margin-top:1rem;">
+    <h2>Start a new thread</h2>
+    <form method="post">
+      <textarea
+        name="description"
+        rows="3"
+        cols="70"
+        placeholder="What's your topic?"
+        required
+      ></textarea><br>
+      <button type="submit" style="margin-top:0.5rem;">Post thread</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- Thread list -->
+  <section>
+    <h2>Latest threads</h2>
+    {% if threads %}
+      <ul style="list-style:none; padding-left:0;">
+        {% for t in threads %}
+          <li style="border-bottom:1px solid #eee; padding:0.75rem 0;">
+            <a
+              href="{{ url_for('view_thread', thid=t.thid) }}"
+              style="font-weight:bold; text-decoration:none;"
+            >
+              {{ t.description[:80] }}{% if t.description|length > 80 %}...{% endif %}
+            </a>
+            <div style="font-size:0.85rem; color:#555; margin-top:0.25rem;">
+              by {{ t.owner_name or 'Anonymous' }}
+              · {{ t.msg_count }} message{{ '' if t.msg_count == 1 else 's' }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No threads yet. Be the first to start one!</p>
+    {% endif %}
+  </section>
+</main>
 {% endblock %}
