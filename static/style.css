@@ -1122,7 +1122,7 @@ hr {
 .login-note {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: var(--color-text-light);
+    color: #4a5568;
     text-align: center;
     font-style: italic;
 }
@@ -1131,6 +1131,6 @@ hr {
     display: block;
     margin-top: 0.25rem;
     font-size: 0.85rem;
-    color: var(--color-text-light);
+    color: #4a5568;
     font-style: italic;
 }
