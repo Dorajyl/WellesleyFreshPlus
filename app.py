@@ -41,8 +41,48 @@ def allowed_file(filename):
 # Ensure the uploads directory exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-@app.route('/home/')
+@app.route('/home/', methods=['GET', 'POST'])
 def index():
+    # POST from side bar: Wellesley Feast form submission
+    if request.method == 'POST':
+        # read form from the sidebar
+        free_food = request.form.get('free_food', '').strip()
+        location = request.form.get('location', '').strip()
+        time_text = request.form.get('time_text', '').strip()
+        details = request.form.get('description', '').strip()  # optional
+
+        # ensure all fields are filled
+        if not free_food or not location or not time_text:
+            flash('Please fill out food name, location, and time for Wellesley Feast.')
+            return redirect(url_for('index'))
+
+        # store event name(title) & details together in description column
+        db_description = f'{free_food} – {details}' if details else free_food
+
+        dbi.conf('wfresh_db')
+        conn = dbi.connect()
+        curs = conn.cursor()
+        curs.execute(
+            '''
+            INSERT INTO notification (time, location, description, owner)
+            VALUES (%s, %s, %s, %s)
+            ''',
+            [time_text, location, db_description, None]  # owner=None for now
+        )
+        conn.commit()
+
+        # flash message
+        flash_msg = (
+            f'Feast: {free_food}\n'
+            f'Where: {location}\n'
+            f'When: {time_text}'
+        )
+        if details:
+            flash_msg += f'\nDetails: {details}'
+
+        flash(flash_msg)
+        return redirect(url_for('index'))  # POST-Redirect-GET
+
     DINING_HALLS = {
         95: {  # Bates
             "name": "Bates",
@@ -116,10 +156,27 @@ def index():
             }
         )
 
+    # fetch most recent 3 Wellesley Feast notifications for display
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    curs = conn.cursor()
+    curs.execute(
+        '''
+        SELECT nid, time, location, description
+        FROM notification
+        ORDER BY nid DESC
+        LIMIT 3
+        '''
+    )
+    feast_events = curs.fetchall()
+    conn.close()
+
     return render_template(
         "main.html",
         days=days,
         meal_order=meal_order,
+        feast_events=feast_events,
+        page_title='Home'
     )
 
 @app.route('/')

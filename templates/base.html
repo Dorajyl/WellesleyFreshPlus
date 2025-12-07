@@ -27,28 +27,30 @@
 
 <!-- Wellesley Feast Sidebar -->
 <div id="feastSidebar" class="sidebar">
-  <div class="sidebar-header">
-    <h3>Wellesley Feast</h3>
-    <button id="closeFeast" class="close-btn">&times;</button>
-  </div>
-  <div class="sidebar-body">
-    <p>Broadcast free food events on campus!</p>
-    <input type="text" placeholder="Event Name">
-    <input type="text" placeholder="Location">
-    <input type="date">
-    <textarea placeholder="Details"></textarea>
-    <button>Submit</button>
-  </div>
+ <div class="sidebar-header">
+   <h3>Wellesley Feast</h3>
+   <button id="closeFeast" class="close-btn">&times;</button>
+ </div>
+ <div class="sidebar-body">
+   <p>Broadcast free food events on campus!</p>
+   <form method="POST" action="{{ url_for('index') }}">
+     <input type="text" name="free_food" placeholder="Free food" required>
+     <input type="text" name="location" placeholder="Where?" required>
+     <input type="text" name="time_text" placeholder="When?" required>
+     <textarea name="description" placeholder="Details (optional)"></textarea>
+     <button type="submit">Submit</button>
+   </form>
+ </div>
 </div>
 
 {% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <div id="messages">
-      {% for msg in messages %}
-        <p>{{ msg }}</p>
-      {% endfor %}
-    </div>
-  {% endif %}
+ {% if messages %}
+   <div id="messages">
+     {% for msg in messages %}
+       <p>{{ msg | replace('\n', '<br>') | safe }}</p>
+     {% endfor %}
+   </div>
+ {% endif %}
 {% endwith %}
 
 
