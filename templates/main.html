@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 
 {% block main_content %}
+
+<!-- Wellesley Feast Banner -->
+{% if feast_events %}
+  <section class="feast-banner">
+    <h2>Wellesley Feast Free Food Alerts!</h2>
+
+    {% for nid, time, location, description in feast_events %}
+      <div class="feast-card">
+        <strong>{{ description }}</strong><br>
+        <span>Where: {{ location }}</span><br>
+        <span>When: {{ time }}</span>
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+
 <!-- Loader -->
 <div id="menu-loader" class="menu-loader">
   Loading menus…
