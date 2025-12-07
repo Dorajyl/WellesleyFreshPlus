@@ -239,6 +239,7 @@ def logout():
 @app.route('/dishdash/', methods=['GET', 'POST'])
 def dishdash():
     """DishDash front page: list threads and create new ones."""
+    dbi.conf('wfresh_db')
     conn = dbi.connect()
     cur = dbi.dict_cursor(conn)
 
@@ -246,13 +247,10 @@ def dishdash():
         description = request.form.get('description', '').strip()
         if not description:
             flash('Please write something for your thread.')
+            conn.close()
             return redirect(url_for('dishdash'))
 
-        # Get user ID from session (logged in user)
-        owner_id = session.get('uid')
-        if owner_id is None:
-            flash('Please log in to create a thread')
-            return redirect(url_for('about'))
+        owner_id = session.get('uid',1)  # default to user 1 if not logged in
 
         # 1) create post
         cur.execute(
@@ -270,6 +268,7 @@ def dishdash():
         conn.commit()
         thid = cur.lastrowid
 
+        conn.close()
         flash('Thread created!')
         return redirect(url_for('view_thread', thid=thid))
 
@@ -279,8 +278,10 @@ def dishdash():
         SELECT t.thid,
                p.postid,
                p.description,
+               p.owner AS owner_id,
                u.name AS owner_name,
-               (SELECT COUNT(*) FROM messages m WHERE m.parentthread = t.thid) AS msg_count
+               (SELECT COUNT(*) FROM messages m
+                 WHERE m.parentthread = t.thid) AS msg_count
         FROM threads t
         JOIN post p ON t.postid = p.postid
         LEFT JOIN users u ON p.owner = u.uid
@@ -290,78 +291,15 @@ def dishdash():
     threads = cur.fetchall()
     conn.close()
 
+    current_uid = session.get('uid')
+
     return render_template('dishdash.html',
                            page_title='DishDash Forum',
-                           threads=threads)
+                           threads=threads,
+                           current_uid=current_uid)
 
-@app.route('/dishdash/thread/<thid>', methods=['GET', 'POST'])
-def view_thread(thid):
-    """View a single thread + messages, and post replies."""
-    conn = dbi.connect()
-    cur = dbi.dict_cursor(conn)
-    # show one thred and all its nested messages
-    if request.method == 'POST':
-        content = request.form.get('content', '').strip()
-        # get reply to and convert to int or None
-        replyto_raw = request.form.get('replyto')
-        replyto = int(replyto_raw) if replyto_raw else None
-        # if empty content, flash error and redirect
-        if not content:
-            flash('Message cannot be empty.')
-            # reload same thread page
-            return redirect(url_for('view_thread', thid=thid))
-
-        # Get user ID from session (logged in user)
-        sender_id = session.get('uid')
-        if sender_id is None:
-            flash('Please log in to post a message')
-            return redirect(url_for('about'))
-        # insert new message to database
-        cur.execute(
-            '''INSERT INTO messages (replyto, sender, content, parentthread)
-               VALUES (%s, %s, %s, %s)''',
-            (replyto, sender_id, content, thid)
-        )
-        conn.commit()
-        flash('Reply posted!')
-        return redirect(url_for('view_thread', thid=thid))
-
-    # GET: add a new message or reply to the thread
-    cur.execute(
-        '''
-        SELECT t.thid,
-               p.postid,
-               p.description,
-               u.name AS owner_name
-        FROM threads t
-        JOIN post p ON t.postid = p.postid
-        LEFT JOIN users u ON p.owner = u.uid
-        WHERE t.thid = %s
-        ''',
-        (thid,)
-    )
-    thread = cur.fetchone()
-    if not thread:
-        conn.close()
-        flash('Thread not found.')
-        return redirect(url_for('dishdash'))
-
-    # load messages for this thread
-    cur.execute(
-        '''
-        SELECT m.mid, m.replyto, m.sender, m.content,
-               m.parentthread, m.sent_at,
-               u.name AS sender_name
-        FROM messages m
-        LEFT JOIN users u ON m.sender = u.uid
-        WHERE m.parentthread = %s
-        ORDER BY m.sent_at ASC
-        ''',
-        (thid,)
-    )
-    rows = cur.fetchall()
-    conn.close()
-    def build_message_tree(rows):
+def build_message_tree(rows):
+    
         """Turn flat messages into a nested tree using replyto."""
         by_id = {}
         roots = []
@@ -391,58 +329,200 @@ def view_thread(thid):
                     roots.append(node)
 
         return roots
-    messages = build_message_tree(rows)
-
-    return render_template('thread.html',
-                           thread=thread,
-                           messages=messages)
-
-@app.route('/dishdash/thread/<thid>/delete/<mid>', methods=['POST'])
-def delete_message(thid, mid):
-    """
-    Delete a single message (and its replies) from a thread.
-    """
-     # Perform recursive delete
-    def delete_message_recursive(cur, mid):
-        """
-        Delete a message and all of its descendants.
-
-        With the self-referential FK messages.replyto → messages.mid,
-        we must delete children BEFORE deleting the parent.
-        """
-        # 1. Find all direct children of this message
-        cur.execute('SELECT mid FROM messages WHERE replyto = %s', (mid,))
-        rows = cur.fetchall()          # rows are dicts because we use dict_cursor
-
-        # Extract child IDs as a simple Python list
-        child_ids = [row['mid'] for row in rows]
-
-        # 2. Recursively delete each child (and its children, etc.)
-        for child_mid in child_ids:
-            delete_message_recursive(cur, child_mid)
-
-        # 3. Now delete THIS message (all its children are already gone)
-        cur.execute('DELETE FROM messages WHERE mid = %s', (mid,))
-
+@app.route('/dishdash/thread/<int:thid>', methods=['GET', 'POST'])
+def view_thread(thid):
+    """View a single thread + messages, and post replies."""
     conn = dbi.connect()
     cur = dbi.dict_cursor(conn)
 
-    # Make sure the message actually belongs to this thread
+    if request.method == 'POST':
+        content = request.form.get('content', '').strip()
+        replyto_raw = request.form.get('replyto')
+        replyto = int(replyto_raw) if replyto_raw else None
+
+        if not content:
+            flash('Message cannot be empty.')
+            conn.close()
+            return redirect(url_for('view_thread', thid=thid))
+
+        sender_id = session.get('uid', 1)  # default to user 1 if not logged in
+
+        # Insert message with current timestamp
+        cur.execute(
+            '''INSERT INTO messages (replyto, sender, content, parentthread, sent_at)
+               VALUES (%s, %s, %s, %s, NOW())''',
+            (replyto, sender_id, content, thid)
+        )
+        conn.commit()
+        conn.close()
+        flash('Reply posted!')
+        return redirect(url_for('view_thread', thid=thid))
+
+    # GET: load thread + post info
     cur.execute(
-        'SELECT parentthread FROM messages WHERE mid = %s',
+        '''
+        SELECT t.thid,
+               p.postid,
+               p.description,
+               p.owner AS owner_id,
+               u.name AS owner_name
+        FROM threads t
+        JOIN post p ON t.postid = p.postid
+        LEFT JOIN users u ON p.owner = u.uid
+        WHERE t.thid = %s
+        ''',
+        (thid,)
+    )
+    thread = cur.fetchone()
+    if not thread:
+        conn.close()
+        flash('Thread not found.')
+        return redirect(url_for('dishdash'))
+
+    # load messages for this thread
+    cur.execute(
+        '''
+        SELECT m.mid, m.replyto, m.sender, m.content,
+               m.parentthread, m.sent_at,
+               u.name AS sender_name
+        FROM messages m
+        LEFT JOIN users u ON m.sender = u.uid
+        WHERE m.parentthread = %s
+        ORDER BY m.sent_at ASC
+        ''',
+        (thid,)
+    )
+    rows = cur.fetchall()
+
+    messages = build_message_tree(rows)
+    current_uid = session.get('uid')
+
+    return render_template('thread.html',
+                           thread=thread,
+                           messages=messages,
+                           current_uid=current_uid)
+
+@app.route('/dishdash/thread/<int:thid>/delete_thread', methods=['POST'])
+def delete_thread(thid):
+    """
+    Delete an entire thread and its post,
+    but only if the current user owns the post.
+    """
+    dbi.conf('wfresh_db')
+    conn = dbi.connect()
+    cur = dbi.dict_cursor(conn)
+
+    # Load thread and owner
+    cur.execute(
+        '''
+        SELECT t.thid, p.postid, p.owner AS owner_id
+        FROM threads t
+        JOIN post p ON t.postid = p.postid
+        WHERE t.thid = %s
+        ''',
+        (thid,)
+    )
+    row = cur.fetchone()
+
+    if not row:
+        conn.close()
+        flash('Thread not found.')
+        return redirect(url_for('dishdash'))
+
+    current_uid = session.get('uid')
+    if current_uid is None:
+        conn.close()
+        flash('You must be logged in to delete threads.')
+        return redirect(url_for('view_thread', thid=thid))
+
+    if int(row['owner_id']) != int(current_uid):
+        conn.close()
+        flash('You can only delete threads you created.')
+        return redirect(url_for('view_thread', thid=thid))
+
+    postid = row['postid']
+
+    # Delete messages first
+    cur.execute('SELECT mid FROM messages WHERE parentthread = %s', (thid,))
+    msg_rows = cur.fetchall()
+    for m in msg_rows:
+        delete_message_recursive(cur, m['mid'])
+
+    # Delete thread
+    cur.execute('DELETE FROM threads WHERE thid = %s', (thid,))
+    # Delete post
+    cur.execute('DELETE FROM post WHERE postid = %s', (postid,))
+
+    conn.commit()
+    conn.close()
+
+    flash('Thread deleted.')
+    return redirect(url_for('dishdash'))
+
+    
+def delete_message_recursive(cur, mid):
+    """
+    Delete a message and all of its descendants.
+
+    With the self-referential FK messages.replyto → messages.mid,
+    we must delete children BEFORE deleting the parent.
+    """
+    # 1. Find all direct children of this message
+    cur.execute('SELECT mid FROM messages WHERE replyto = %s', (mid,))
+    rows = cur.fetchall()          # rows are dicts because we use dict_cursor
+
+    # Extract child IDs as a simple Python list
+    child_ids = [row['mid'] for row in rows]
+
+    # 2. Recursively delete each child (and its children, etc.)
+    for child_mid in child_ids:
+        delete_message_recursive(cur, child_mid)
+
+    # 3. Now delete THIS message (all its children are already gone)
+    cur.execute('DELETE FROM messages WHERE mid = %s', (mid,))
+@app.route('/dishdash/thread/<int:thid>/delete/<int:mid>', methods=['POST'])
+def delete_message(thid, mid):
+    """
+    Delete a single message (and its replies) from a thread,
+    but only if the current user is the sender.
+    """
+    conn = dbi.connect()
+    cur = dbi.dict_cursor(conn)
+
+    cur.execute(
+        'SELECT parentthread, sender FROM messages WHERE mid = %s',
         (mid,)
     )
     row = cur.fetchone()
+
     if not row:
         flash('Message not found.')
-    elif int(row['parentthread']) != int(thid):
-        flash('Message does not belong to this thread.')
-    else:
-        delete_message_recursive(cur, mid)
-        conn.commit()
-        flash('Message and its replies have been deleted.')
+        conn.close()
+        return redirect(url_for('view_thread', thid=thid))
 
+    if int(row['parentthread']) != int(thid):
+        flash('Message does not belong to this thread.')
+        conn.close()
+        return redirect(url_for('view_thread', thid=thid))
+
+    current_uid = session.get('uid')
+    if current_uid is None:
+        flash('You must be logged in to delete messages.')
+        conn.close()
+        return redirect(url_for('view_thread', thid=thid))
+
+    if int(row['sender']) != int(current_uid):
+        flash('You can only delete your own messages.')
+        conn.close()
+        return redirect(url_for('view_thread', thid=thid))
+
+    # All checks passed → delete recursively
+    delete_message_recursive(cur, mid)
+    conn.commit()
+
+    flash('Message and its replies have been deleted.')
     return redirect(url_for('view_thread', thid=thid))
+
 
 
 # Testing data: hard boil egg 39186
