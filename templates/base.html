@@ -34,10 +34,14 @@
  <div class="sidebar-body">
    <p>Broadcast free food events on campus!</p>
    <form method="POST" action="{{ url_for('index') }}">
-     <input type="text" id="free_food" name="free_food" placeholder="Free food" required>
-     <input type="text" id="location" name="location" placeholder="Where?" required>
-     <input type="text" id="time_text" name="time_text" placeholder="When?" required>
-     <textarea id="description" name="description" placeholder="Details (optional)"></textarea>
+     <p><label for="free_food">Free Food</label></p>
+     <input type="text" id="free_food" name="free_food" required>
+     <p><label for="location">Where </label></p>
+     <input type="text" id="location" name="location" required>
+     <p><label for="time_text">When</label></p>
+     <input type="text" id="time_text" name="time_text" required>
+     <p><label for="description2">Details (optional)</label></p>
+     <textarea id="description2" name="description2"></textarea>
      <button type="submit">Submit</button>
    </form>
  </div>

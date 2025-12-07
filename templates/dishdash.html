@@ -11,11 +11,15 @@
   <section style="margin-top:1rem;">
     <h2>Start a new thread</h2>
     <form method="post">
+    <label id="new-thread-label" for="description" style="display:block; font-weight:bold;">
+        Describe your topic:
+      </label>
       <textarea
+        id="description"
         name="description"
         rows="3"
         cols="70"
-        placeholder="What's your topic?"
+        placeholder="The Dinning Hall Food is Great Because..."
         required
       ></textarea><br>
       <button type="submit" style="margin-top:0.5rem;">Post thread</button>
