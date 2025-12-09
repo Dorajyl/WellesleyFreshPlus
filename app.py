@@ -33,7 +33,15 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB maximum
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):
-    '''Return True if the filename has an allowed extension.'''
+    """
+    Check if a filename has an allowed image extension.
+    
+    Args:
+        filename (str): The filename to check
+        
+    Returns:
+        bool: True if the file extension is in ALLOWED_EXTENSIONS, False otherwise
+    """
     return (
         '.' in filename and
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -44,6 +52,19 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 @app.route('/home/', methods=['GET', 'POST'])
 def index():
+    """
+    Home page route - displays weekly menu and handles Wellesley Feast submissions.
+    
+    GET: Displays the weekly menu for all dining halls with cached data,
+         and shows the 3 most recent Wellesley Feast notifications.
+    
+    POST: Handles Wellesley Feast form submission from sidebar.
+          Creates a new notification entry in the database.
+    
+    Returns:
+        render_template: Renders main.html with menu data and feast events
+        redirect: Redirects to index after POST (POST-Redirect-GET pattern)
+    """
     # POST from side bar: Wellesley Feast form submission
     if request.method == 'POST':
         # read form from the sidebar
@@ -184,12 +205,25 @@ def index():
 
 @app.route('/')
 def about():
+    """
+    About page route - displays information about the application.
+    
+    Returns:
+        render_template: Renders about.html with page title
+    """
     return render_template('about.html', page_title='About Us')
 
 @app.route('/join/', methods=["POST"])
 def join():
     """
-    Set up the login page.
+    User registration route - creates a new user account.
+    
+    Accepts username and password from form, validates that passwords match,
+    and creates a new user in the database. On success, logs the user in
+    and sets session variables.
+    
+    Returns:
+        redirect: Redirects to about page with flash message indicating success or error
     """
     username = request.form.get('username')
     passwd1 = request.form.get('password1')
@@ -213,7 +247,15 @@ def join():
 
 @app.route('/login/', methods=["POST"])
 def login():
-    """log in and check password"""
+    """
+    User login route - authenticates user and creates session.
+    
+    Accepts username and password from form, verifies credentials against database.
+    On successful login, sets session variables (username, uid, logged_in).
+    
+    Returns:
+        redirect: Redirects to about page with flash message indicating success or failure
+    """
     username = request.form.get('username')
     passwd = request.form.get('password')
     conn = dbi.connect()
@@ -231,7 +273,15 @@ def login():
 
 @app.route('/logout/')
 def logout():
-    """log out"""
+    """
+    User logout route - clears session and logs user out.
+    
+    Removes username, uid, and logged_in from session. If user was not logged in,
+    displays appropriate message.
+    
+    Returns:
+        redirect: Redirects to about page with flash message
+    """
     if 'username' in session:
         username = session['username']
         session.pop('username')
@@ -245,7 +295,19 @@ def logout():
 
 @app.route('/dishdash/', methods=['GET', 'POST'])
 def dishdash():
-    """DishDash front page: list threads and create new ones."""
+    """
+    DishDash forum front page - lists all threads and handles thread creation.
+    
+    GET: Displays all threads with their descriptions, owners, and message counts.
+         Threads are ordered by most recent first.
+    
+    POST: Creates a new thread from form submission. Creates both a post entry
+          and a thread entry linked to that post.
+    
+    Returns:
+        render_template: Renders dishdash.html with threads list and current user ID
+        redirect: Redirects to view_thread after creating new thread, or back to dishdash on error
+    """
     dbi.conf('wfresh_db')
     conn = dbi.connect()
     cur = dbi.dict_cursor(conn)
@@ -306,8 +368,26 @@ def dishdash():
                            current_uid=current_uid)
 
 def build_message_tree(rows):
+    """
+    Convert a flat list of messages into a nested tree structure.
     
-        """Turn flat messages into a nested tree using replyto."""
+    Takes a list of message dictionaries and organizes them into a tree
+    based on the replyto field. Messages with replyto=None become root nodes,
+    and others are attached as children to their parent messages.
+    
+    Args:
+        rows (list): List of message dictionaries, each containing:
+            - mid: message ID
+            - replyto: ID of parent message (None for root messages)
+            - sender: user ID of sender
+            - content: message content
+            - parentthread: thread ID
+            - sent_at: timestamp
+            - sender_name: name of sender
+    
+    Returns:
+        list: List of root message nodes, each with a 'children' list containing nested replies
+    """
         by_id = {}
         roots = []
         # create the nodes
@@ -338,7 +418,22 @@ def build_message_tree(rows):
         return roots
 @app.route('/dishdash/thread/<int:thid>', methods=['GET', 'POST'])
 def view_thread(thid):
-    """View a single thread + messages, and post replies."""
+    """
+    View a single thread with all its messages and handle reply submissions.
+    
+    GET: Displays the thread post and all messages in a nested tree structure.
+         Messages are organized hierarchically based on reply relationships.
+    
+    POST: Creates a new message/reply in the thread. Requires content and
+          optionally a replyto field to reply to a specific message.
+    
+    Args:
+        thid (int): The thread ID to display
+    
+    Returns:
+        render_template: Renders thread.html with thread data and nested messages
+        redirect: Redirects back to thread view after posting reply, or to dishdash if thread not found
+    """
     conn = dbi.connect()
     cur = dbi.dict_cursor(conn)
 
@@ -412,8 +507,16 @@ def view_thread(thid):
 @app.route('/dishdash/thread/<int:thid>/delete_thread', methods=['POST'])
 def delete_thread(thid):
     """
-    Delete an entire thread and its post,
-    but only if the current user owns the post.
+    Delete an entire thread and its associated post.
+    
+    Only allows deletion if the current logged-in user is the owner of the thread's post.
+    Recursively deletes all messages in the thread before deleting the thread and post.
+    
+    Args:
+        thid (int): The thread ID to delete
+    
+    Returns:
+        redirect: Redirects to dishdash after deletion, or back to thread view with error message
     """
     dbi.conf('wfresh_db')
     conn = dbi.connect()
@@ -469,10 +572,14 @@ def delete_thread(thid):
     
 def delete_message_recursive(cur, mid):
     """
-    Delete a message and all of its descendants.
-
-    With the self-referential FK messages.replyto → messages.mid,
-    we must delete children BEFORE deleting the parent.
+    Recursively delete a message and all of its descendant replies.
+    
+    Deletes messages in bottom-up order (children before parent) to handle
+    the self-referential foreign key constraint (messages.replyto → messages.mid).
+    
+    Args:
+        cur: Database cursor for executing queries
+        mid (int): The message ID to delete along with all its children
     """
     # 1. Find all direct children of this message
     cur.execute('SELECT mid FROM messages WHERE replyto = %s', (mid,))
@@ -490,8 +597,18 @@ def delete_message_recursive(cur, mid):
 @app.route('/dishdash/thread/<int:thid>/delete/<int:mid>', methods=['POST'])
 def delete_message(thid, mid):
     """
-    Delete a single message (and its replies) from a thread,
-    but only if the current user is the sender.
+    Delete a message and all its replies from a thread.
+    
+    Only allows deletion if the current logged-in user is the sender of the message.
+    Verifies that the message belongs to the specified thread before deletion.
+    Uses recursive deletion to remove all child messages.
+    
+    Args:
+        thid (int): The thread ID containing the message
+        mid (int): The message ID to delete
+    
+    Returns:
+        redirect: Redirects back to thread view with success or error message
     """
     conn = dbi.connect()
     cur = dbi.dict_cursor(conn)
@@ -532,9 +649,26 @@ def delete_message(thid, mid):
 
 
 
-# Testing data: hard boil egg 39186
 @app.route('/dish/<did>', methods=['GET', 'POST'])
 def get_dish(did):
+    """
+    Display dish details page and handle comment/picture submissions.
+    
+    GET: Displays dish information, all comments, and all pictures for the dish.
+         Shows forms for adding new comments and uploading pictures.
+    
+    POST: Handles form submissions for:
+          - Adding comments (with rating type: yum/yuck)
+          - Uploading pictures
+          - Both comment and picture can be submitted together
+    
+    Args:
+        did (str): The dish ID to display
+    
+    Returns:
+        render_template: Renders dish.html with dish data, comments, and pictures
+        redirect: Redirects back to dish page after POST, or to index if dish not found
+    """
     dbi.conf('wfresh_db')
     conn = dbi.connect()
     cur = conn.cursor()
@@ -627,9 +761,21 @@ def get_dish(did):
     
     return render_template('dish.html', dish=dish, comments=comments, dish_pics=dish_pics)
 
-# Delete pictures
 @app.route('/dish/<did>/delete_pic/<int:pid>', methods=['POST'])
 def delete_dish_pic(did, pid):
+    """
+    Delete a picture from a dish's photo gallery.
+    
+    Removes the picture entry from the dish_picture table and deletes the
+    actual file from the filesystem if no other references exist.
+    
+    Args:
+        did (str): The dish ID
+        pid (int): The picture ID to delete
+    
+    Returns:
+        redirect: Redirects back to dish page with success or error message
+    """
     dbi.conf('wfresh_db')
     conn = dbi.connect()
     cur = conn.cursor()
@@ -667,9 +813,21 @@ def delete_dish_pic(did, pid):
     flash('Picture deleted.')
     return redirect(url_for('get_dish', did=did))
 
-# Delete comments
 @app.route('/dish/<did>/delete_comment/<int:commentid>', methods=['POST'])
 def delete_comment(did, commentid):
+    """
+    Delete a comment from a dish's comment section.
+    
+    Verifies that the comment exists and belongs to the specified dish,
+    then removes it from the comments table.
+    
+    Args:
+        did (str): The dish ID
+        commentid (int): The comment ID to delete
+    
+    Returns:
+        redirect: Redirects back to dish page with success or error message
+    """
     dbi.conf('wfresh_db')
     conn = dbi.connect()
     cur = conn.cursor()
