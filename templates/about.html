@@ -2,35 +2,52 @@
 
 {% block main_content %}
 <div class="about-page">
-    <h1>About Us</h1>
-    <p>This app was written by Dora, Joey, Zoe.</p>
-    <p>Welcome to the Wellesley Fresh + project! This page showcases menus, updates, and more. Please wait for up to
-        1 minute for the menu to load.
-    </p>
+  <h1>About Us</h1>
+  <p>This app was written by Dora, Joey, Zoe.</p>
+  <p>Welcome to the Wellesley Fresh + project! This page showcases menus, updates, and more. Please wait for up to
+      1 minute for the menu to load.
+  </p>
 
-    <div class="login-section">
-        {% if session.get('uid') %}
-            <div class="user-info">
-                <h2>Welcome, {{ session.get('name', 'User') }}!</h2>
-                <p>Email: {{ session.get('email') }}</p>
-                <p>User ID: {{ session.get('uid') }}</p>
-                <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-            </div>
-        {% else %}
-            <div class="login-form-container">
-                <h2>Login</h2>
-                <form method="POST" action="{{ url_for('login') }}" class="login-form">
-                    <div class="form-group">
-                        <label for="email_handle">Email Handle:</label>
-                        <input type="text" id="email_handle" name="email_handle" required 
-                               placeholder="Enter here...">
-                        <small class="form-hint">Enter your Wellesley email handle (e.g., jl127)</small>
-                    </div>
-                    <button type="submit" class="login-btn">Login</button>
-                </form>
-                <p class="login-note">First time? Just enter your email handle and we'll create your account!</p>
-            </div>
-        {% endif %}
-    </div>
+  <div class="login-section">
+    {% if session.get('uid') %}
+      <div class="user-info">
+        <h2>Welcome, {{ session.get('name', 'User') }}!</h2>
+        <p>User ID: {{ session.get('uid') }}</p>
+        {# add more fields if you store them in session, e.g. email #}
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+      </div>
+    {% else %}
+      <p>Please login or join, using one of the forms below:</p>
+
+      <form id="joinform" action="{{ url_for('join') }}" method="post">
+        <h2>Join</h2>
+        <p><label><input type="text" name="username" required pattern="^\w+$"> Username</label></p>
+        <p><label><input type="password" name="password1" required> Password </label></p>
+        <p><label><input type="password" name="password2" required> Password again </label></p>
+        <p><button type="submit">Submit</button></p>
+      </form>
+          
+      <form id="loginform" action="{{ url_for('login') }}" method="post">
+        <h2>Login</h2>
+        <p><label>Username: <input type="text" name="username" required pattern="^\w+$"></label></p>
+        <p><label>Password: <input type="password" name="password" required></label></p>
+        <p><button type="submit">Submit</button></p>
+      </form>
+    {% endif %}
+  </div>
 </div>
+{% endblock %}
+
+{% block jquery_scripts %}
+<script>
+$("#joinform").on('submit', function (event) {
+     var pw1 = $(this).find('[name=password1]').val();
+     var pw2 = $(this).find('[name=password2]').val();
+     // should also check for length and common words etc
+     if (pw1 != pw2) {
+         // something more sophisticated than alert would be nice
+         alert("passwords don't match");
+     }
+});
+</script>
 {% endblock %}

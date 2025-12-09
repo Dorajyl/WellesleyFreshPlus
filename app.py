@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 import secrets
 import cs304dbi as dbi
+import cs304login as auth
 import requests
 from datetime import date, datetime, timedelta
 import helper
@@ -185,58 +186,62 @@ def index():
 def about():
     return render_template('about.html', page_title='About Us')
 
-# Login and Logout routes
-@app.route('/login/', methods=['GET', 'POST'])
+@app.route('/join/', methods=["POST"])
+def join():
+    """
+    Set up the login page.
+    """
+    username = request.form.get('username')
+    passwd1 = request.form.get('password1')
+    passwd2 = request.form.get('password2')
+    if passwd1 != passwd2:
+        flash('passwords do not match')
+        return redirect( url_for('about'))
+    conn = dbi.connect()
+    (uid, is_dup, other_err) = auth.insert_user(conn, username, passwd1)
+    if other_err:
+        raise other_err
+    if is_dup:
+        flash('Sorry; that username is taken')
+        return redirect( url_for('about'))
+    ## success
+    flash('FYI, you were issued UID {}'.format(uid))
+    session['username'] = username
+    session['uid'] = uid
+    session['logged_in'] = True
+    return redirect( url_for('about'))
+
+@app.route('/login/', methods=["POST"])
 def login():
-    dbi.conf('wfresh_db')
-    
-    if request.method == 'POST':
-        email_handle = request.form.get('email_handle', '').strip()
-        
-        if not email_handle:
-            flash('Please enter your email handle')
-            return redirect(url_for('about'))
-        
-        conn = dbi.connect()
-        cur = conn.cursor()
-        
-        # check if user exists with this email handle
-        cur.execute('SELECT uid, name, email FROM users WHERE name = %s OR email = %s OR email LIKE %s', 
-                   (email_handle, email_handle, f'{email_handle}@%'))
-        user = cur.fetchone()
-        
-        if user is None:
-            # First time login - create new user
-            email = f'{email_handle}@wellesley.edu'
-            cur.execute('''INSERT INTO users (name, email) 
-                           VALUES (%s, %s)''',
-                       (email_handle, email))
-            conn.commit()
-            user_id = cur.lastrowid
-            
-            # Fetch the newly created user
-            cur.execute('SELECT uid, name, email FROM users WHERE uid = %s', (user_id,))
-            user = cur.fetchone()
-            flash(f'Welcome! Your account has been created. User ID: {user_id}')
-        else:
-            flash(f'Welcome back, {user[1]}!')
-        
-        # Store user info in session
-        session['uid'] = user[0]
-        session['name'] = user[1]
-        session['email'] = user[2]
-        
-        conn.close()
-        return redirect(url_for('about'))
-    
-    # GET request - just redirect to about page
-    return redirect(url_for('about'))
+    """log in and check password"""
+    username = request.form.get('username')
+    passwd = request.form.get('password')
+    conn = dbi.connect()
+    (ok, uid) = auth.login_user(conn, username, passwd)
+    if not ok:
+        flash('login incorrect, please try again or join')
+        return redirect( url_for('about'))
+    ## success
+    print('LOGIN', username)
+    flash('successfully logged in as '+username)
+    session['username'] = username
+    session['uid'] = uid
+    session['logged_in'] = True
+    return redirect( url_for('about'))
 
 @app.route('/logout/')
 def logout():
-    session.clear()
-    flash('You have been logged out')
-    return redirect(url_for('about'))
+    """log out"""
+    if 'username' in session:
+        username = session['username']
+        session.pop('username')
+        session.pop('uid')
+        session.pop('logged_in')
+        flash('You are logged out')
+        return redirect( url_for('about'))
+    else:
+        flash('you are not logged in. Please login or join')
+        return redirect( url_for('about'))
 
 @app.route('/dishdash/', methods=['GET', 'POST'])
 def dishdash():
