@@ -388,34 +388,34 @@ def build_message_tree(rows):
     Returns:
         list: List of root message nodes, each with a 'children' list containing nested replies
     """
-        by_id = {}
-        roots = []
-        # create the nodes
-        for row in rows:
-            node = {
-                'mid': row['mid'],
-                'replyto': row['replyto'],
-                'sender': row['sender'],
-                'content': row['content'],
-                'parentthread': row['parentthread'],
-                'sent_at': row['sent_at'],
-                'sender_name': row['sender_name'],
-                'children': []
-            }
-            by_id[node['mid']] = node
-        # check assign and parent and the children, and find roots
-        for node in by_id.values():
-            parent_id = node['replyto']
-            if parent_id is None:
-                roots.append(node)
+    by_id = {}
+    roots = []
+    # create the nodes
+    for row in rows:
+        node = {
+            'mid': row['mid'],
+            'replyto': row['replyto'],
+            'sender': row['sender'],
+            'content': row['content'],
+            'parentthread': row['parentthread'],
+            'sent_at': row['sent_at'],
+            'sender_name': row['sender_name'],
+            'children': []
+        }
+        by_id[node['mid']] = node
+    # check assign and parent and the children, and find roots
+    for node in by_id.values():
+        parent_id = node['replyto']
+        if parent_id is None:
+            roots.append(node)
+        else:
+            parent = by_id.get(parent_id)
+            if parent:
+                parent['children'].append(node)
             else:
-                parent = by_id.get(parent_id)
-                if parent:
-                    parent['children'].append(node)
-                else:
-                    roots.append(node)
+                roots.append(node)
 
-        return roots
+    return roots
 @app.route('/dishdash/thread/<int:thid>', methods=['GET', 'POST'])
 def view_thread(thid):
     """
