@@ -1,4 +1,4 @@
-#!/students/wfresh/Draft/venv/bin/python
+#!/students/jl130/cs304/proj1/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
