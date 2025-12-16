@@ -23,10 +23,13 @@
                             <img src="{{ url_for('static', filename='uploads/' ~ pic[1]) }}"
                                 alt="Dish photo">
 
-                            <form method="POST"
-                                action="{{ url_for('delete_dish_pic', did=dish.did, pid=pic[0]) }}">
-                                <button type="submit">Delete</button>
-                            </form>
+                            {# Only show delete button if current user owns this photo #}
+                            {% if current_uid is not none and pic[2] is not none and (current_uid|int == pic[2]|int) %}
+                                <form method="POST"
+                                    action="{{ url_for('delete_dish_pic', did=dish.did, pid=pic[0]) }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -58,11 +61,15 @@
                                     by User #{{ comment[1] }}
                                 {% endif %}
                             </span>
-                            <form method="POST"
-                                action="{{ url_for('delete_comment', did=dish.did, commentid=comment[0]) }}"
-                                class="comment-delete-form">
-                                <button type="submit">Delete</button>
-                            </form>
+
+                            {# Only show delete button if current user owns this comment #}
+                            {% if current_uid is not none and (current_uid|int == comment[1]|int) %}
+                                <form method="POST"
+                                    action="{{ url_for('delete_comment', did=dish.did, commentid=comment[0]) }}"
+                                    class="comment-delete-form">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            {% endif %}
                         </div>
                         <div class="comment-text">
                             {{ comment[3] }}
