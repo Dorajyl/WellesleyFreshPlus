@@ -7,6 +7,7 @@ Responsibilities:
 - Define routes and render templates
 - Enforce authentication (uid in session) for all mutating actions (POST deletes/creates/uploads)
 - Delegate database work and non-route logic to wfresh_helper.py
+
 """
 
 from flask import (
@@ -59,11 +60,10 @@ def require_login():
 
     If not logged in:
       - For normal routes, redirect to about page with a flash message.
-      - For AJAX, return a JSON error with 401.
 
     Returns:
         uid (int/str) if logged in,
-        otherwise a Flask response (redirect/json) that should be returned immediately.
+        otherwise a Flask redirect response that should be returned immediately.
     """
     uid = current_uid()
     if uid is None:
@@ -101,8 +101,8 @@ def join():
         flash('passwords do not match')
         return redirect(url_for('about'))
 
-    # cs304login expects a connection object.
-    conn = wfresh_helper.db_connect(dict_cursor=False)
+    # db_connect returns (conn, cur). cs304login expects *conn* only.
+    conn, _ = wfresh_helper.db_connect(dict_cursor=False)
     (uid, is_dup, other_err) = auth.insert_user(conn, username, passwd1)
     conn.close()
 
@@ -132,7 +132,8 @@ def login():
     username = request.form.get('username')
     passwd = request.form.get('password')
 
-    conn = wfresh_helper.db_connect(dict_cursor=False)
+    # db_connect returns (conn, cur). cs304login expects *conn* only.
+    conn, _ = wfresh_helper.db_connect(dict_cursor=False)
     (ok, uid) = auth.login_user(conn, username, passwd)
     conn.close()
 
@@ -196,7 +197,6 @@ def index():
             flash('Please fill out food name, location, and time for Wellesley Feast.')
             return redirect(url_for('index'))
 
-        # Insert into DB (wfresh_helper handles SQL + commit + close)
         wfresh_helper.insert_feast_notification(
             owner_uid=uid,
             time_text=time_text,
@@ -215,10 +215,8 @@ def index():
     # You can also use wfresh_helper.get_meal_order(datetime.now()) if you want dynamic ordering.
     meal_order = ["Breakfast", "Lunch", "Dinner"]
 
-    # Week menu uses caching in wfresh_helper.py
     week_menu = wfresh_helper.fetch_week_menu(today)
 
-    # Build "days" structure the template expects
     days = []
     for offset in range(7):
         d = today + wfresh_helper.timedelta(days=offset)
@@ -379,7 +377,6 @@ def get_dish(did):
       - Show dish info, comments, picture gallery.
     POST:
       - Add comment and/or upload picture (requires login).
-      - Enforces: you must be logged in to post.
       - Stores picture owner uid in dish_picture.owner.
     """
     if request.method == 'POST':
@@ -496,7 +493,6 @@ def delete_comment(did, commentid):
 
     flash(msg)
     return redirect(url_for('get_dish', did=did))
-
 
 
 if __name__ == '__main__':
