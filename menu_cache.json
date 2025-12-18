@@ -1,2722 +1,6 @@
 {
-  "cached_date": "2025-12-15T19:29:26.007488",
+  "cached_date": "2025-12-18T00:17:56.232268",
   "menu_data": {
-    "2025-12-15": {
-      "Breakfast": {
-        "Bates": [
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39442,
-            "name": "Hash Browns",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39343,
-            "name": "Turkey Sausage Link",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 41060,
-            "name": "Strawberry Shortcake Pancakes",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "GS ROOM"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39616,
-            "name": "Vegetarian Sausage Patty",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39608,
-            "name": "Made to Order Waffle Bar",
-            "station": "WAFFLE BAR"
-          },
-          {
-            "did": 39603,
-            "name": "Bagel Blueberry",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39604,
-            "name": "Bagel Cinnamon Raisin",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39605,
-            "name": "Bagel Plain",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 28736,
-            "name": "Bagel Poppy Seed",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39606,
-            "name": "Bagel Whole Wheat",
-            "station": "BAGEL BAR"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39232,
-            "name": "Pork Sausage Patty",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39181,
-            "name": "White rice steamed with salt and black pepper.",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39212,
-            "name": "Tater Tots",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39183,
-            "name": "Western Tofu Scramble",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39175,
-            "name": "Breakfast Bowl with Sausage",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 45889,
-            "name": "Egg and Cheddar Cheese Sandwich on Bagel",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39565,
-            "name": "Belgian Waffle",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39308,
-            "name": "Turkey Bacon",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39699,
-            "name": "Craft Breakfast Burrito",
-            "station": "BREAKFAST SANDWICHES"
-          },
-          {
-            "did": 28555,
-            "name": "Overnight Oats Base",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39648,
-            "name": "Granola GS",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          }
-        ]
-      },
-      "Lunch": {
-        "Bates": [
-          {
-            "did": 43436,
-            "name": "Roasted Honey Thyme Carrots",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39260,
-            "name": "Steamed Vegetable Medley",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39313,
-            "name": "Classic Rice Pilaf",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 43435,
-            "name": "Herb Roasted Pork Tenderloin",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 43437,
-            "name": "Lyonaise Potatoes",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39274,
-            "name": "Housemade Fried Kettle Chips",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 43432,
-            "name": "Beef Philly Sandwich",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39318,
-            "name": "Lentil Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39264,
-            "name": "Mexican Chicken and Lime Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39512,
-            "name": "Sausage and Mushroom Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39642,
-            "name": "Mediterranean Falafel Box",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39318,
-            "name": "Lentil Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39338,
-            "name": "Chipotle Black Bean Burger",
-            "station": "LUNCH"
-          },
-          {
-            "did": 43440,
-            "name": "Citrus Aioli",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39782,
-            "name": "Island Coconut Brown Rice",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39331,
-            "name": "Roasted Carrots",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39449,
-            "name": "Steamed Corn",
-            "station": "LUNCH"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39589,
-            "name": "Coconut Basmati Rice",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39445,
-            "name": "Coconut Curry Chicken Thighs",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39251,
-            "name": "Sauteed Vegetable Medley",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39222,
-            "name": "Margherita Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39379,
-            "name": "Meat Lovers Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39264,
-            "name": "Mexican Chicken and Lime Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39265,
-            "name": "Mexican Street Corn Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 48249,
-            "name": "Garlic Lemon Grilled Chicken Sandwich White Bun",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39374,
-            "name": "Spicy Fries",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39338,
-            "name": "Chipotle Black Bean Burger",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39706,
-            "name": "Cajun Turkey Breast",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39477,
-            "name": "New Orleans Dirty Rice",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39259,
-            "name": "Steamed Spinach",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 43441,
-            "name": "Cajun Lentil Cakes",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39579,
-            "name": "Chickpea Stew",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39313,
-            "name": "Classic Rice Pilaf",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39571,
-            "name": "Sauteed Kale with Garlic",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 41708,
-            "name": "Beef Wellington Pot Pie",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39402,
-            "name": "Blanched Carrots",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39594,
-            "name": "Broccoli Ranch Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39720,
-            "name": "Vegan Margherita Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39581,
-            "name": "Beef and Vegetable Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39472,
-            "name": "Tomato Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "DAILY SALADS LUNCH"
-          }
-        ]
-      },
-      "Dinner": {
-        "Bates": [
-          {
-            "did": 39318,
-            "name": "Lentil Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39264,
-            "name": "Mexican Chicken and Lime Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39645,
-            "name": "Tofu Marsala",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 43433,
-            "name": "Chicken Marsala",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39577,
-            "name": "Garlic Bread Toast",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 43434,
-            "name": "Mashed Redskin Potatoes",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39221,
-            "name": "Roasted Asparagus with Garlic",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39516,
-            "name": "Sauteed Squash Medley with Garlic",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39274,
-            "name": "Housemade Fried Kettle Chips",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 43432,
-            "name": "Beef Philly Sandwich",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39512,
-            "name": "Sausage and Mushroom Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39610,
-            "name": "Made to Order Nacho Bar",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39271,
-            "name": "Pico De Gallo",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39455,
-            "name": "Sour Cream Side",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39430,
-            "name": "Spicy Black Beans",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39609,
-            "name": "Guacamole",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39318,
-            "name": "Lentil Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39251,
-            "name": "Sauteed Vegetable Medley",
-            "station": "DINNER"
-          },
-          {
-            "did": 39449,
-            "name": "Steamed Corn",
-            "station": "DINNER"
-          },
-          {
-            "did": 43438,
-            "name": "Butternut Squash and Lentil Stew",
-            "station": "DINNER"
-          },
-          {
-            "did": 39782,
-            "name": "Island Coconut Brown Rice",
-            "station": "DINNER"
-          },
-          {
-            "did": 43439,
-            "name": "Portabella Carnitas",
-            "station": "DINNER"
-          },
-          {
-            "did": 39331,
-            "name": "Roasted Carrots",
-            "station": "DINNER"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39379,
-            "name": "Meat Lovers Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39222,
-            "name": "Margherita Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39264,
-            "name": "Mexican Chicken and Lime Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39265,
-            "name": "Mexican Street Corn Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 46951,
-            "name": "Beef Fajita",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39189,
-            "name": "Fajita Marinated Tofu",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39267,
-            "name": "Mexican Rice",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39405,
-            "name": "Sauteed Spicy Peppers and Onions",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39238,
-            "name": "Stir Fry Vegetable Medley",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 48249,
-            "name": "Garlic Lemon Grilled Chicken Sandwich White Bun",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39374,
-            "name": "Spicy Fries",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39338,
-            "name": "Chipotle Black Bean Burger",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39290,
-            "name": "Made to Order Burger Bar",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 43442,
-            "name": "Sauteed Yellow Squash",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39278,
-            "name": "Steamed Green Beans",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 43443,
-            "name": "Tomato Relish",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39338,
-            "name": "Chipotle Black Bean Burger",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39497,
-            "name": "Crinkle Cut French Fries",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39581,
-            "name": "Beef and Vegetable Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39472,
-            "name": "Tomato Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39706,
-            "name": "Cajun Turkey Breast",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39477,
-            "name": "New Orleans Dirty Rice",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39259,
-            "name": "Steamed Spinach",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 43441,
-            "name": "Cajun Lentil Cakes",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39594,
-            "name": "Broccoli Ranch Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39720,
-            "name": "Vegan Margherita Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "FEATURE SALADS"
-          },
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI"
-          }
-        ]
-      }
-    },
-    "2025-12-16": {
-      "Breakfast": {
-        "Bates": [
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39232,
-            "name": "Pork Sausage Patty",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39322,
-            "name": "Potato Tater Triangles",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39565,
-            "name": "Belgian Waffle",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39459,
-            "name": "Burrito Egg and Cheese",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "GS ROOM"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39626,
-            "name": "Sweet Potato Scramble",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39616,
-            "name": "Vegetarian Sausage Patty",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39608,
-            "name": "Made to Order Waffle Bar",
-            "station": "WAFFLE BAR"
-          },
-          {
-            "did": 39603,
-            "name": "Bagel Blueberry",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39604,
-            "name": "Bagel Cinnamon Raisin",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39605,
-            "name": "Bagel Plain",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 28736,
-            "name": "Bagel Poppy Seed",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39606,
-            "name": "Bagel Whole Wheat",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 28762,
-            "name": "Blueberry Lemon and Rosemary Infused Water",
-            "station": "BEVERAGE"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39178,
-            "name": "Potatoes Obrien",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39181,
-            "name": "White rice steamed with salt and black pepper.",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39308,
-            "name": "Turkey Bacon",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39175,
-            "name": "Breakfast Bowl with Sausage",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39525,
-            "name": "Chocolate Chip Buttermilk Pancakes",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39214,
-            "name": "Cream of Wheat",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39213,
-            "name": "Biscuit and Sausage Gravy",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39343,
-            "name": "Turkey Sausage Link",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "BREAKFAST SANDWICHES"
-          },
-          {
-            "did": 28555,
-            "name": "Overnight Oats Base",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39648,
-            "name": "Granola GS",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          }
-        ]
-      },
-      "Lunch": {
-        "Bates": [
-          {
-            "did": 39577,
-            "name": "Garlic Bread Toast",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39218,
-            "name": "Grilled Zucchini Squash and Peppers",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39483,
-            "name": "Herbed Carrots",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 46668,
-            "name": "Cheese Stuffed Shells",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39188,
-            "name": "Chicken Fajita",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 44091,
-            "name": "Citrus Cabbage Slaw",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39475,
-            "name": "Fried Tofu",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39272,
-            "name": "Pickled Red Onion",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 44090,
-            "name": "Baja Sauce",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39524,
-            "name": "Chicken Tortellini Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39252,
-            "name": "Creamy Tomato Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39523,
-            "name": "Hot Honey Pepperoni Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          },
-          {
-            "did": 44095,
-            "name": "Baked Penne Pasta with Meat Sauce",
-            "station": "GS ROOM"
-          },
-          {
-            "did": 39675,
-            "name": "Tomato Ricotta Pasta Bake",
-            "station": "GS ROOM"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39642,
-            "name": "Mediterranean Falafel Box",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39441,
-            "name": "Vegetarian Tortilla Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39680,
-            "name": "Herb Roasted Red Potatoes",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39454,
-            "name": "Potato and Cheese Pierogis",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39190,
-            "name": "Sauteed Peppers and Onions",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39416,
-            "name": "Steamed Snow Peas",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39352,
-            "name": "Plant Based Chicken Nuggets",
-            "station": "LUNCH"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39600,
-            "name": "BBQ Smoked Pulled Pork",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39251,
-            "name": "Sauteed Vegetable Medley",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 47791,
-            "name": "Smashed Sweet Potato",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 46945,
-            "name": "Buffalo Chicken Pasta",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 44089,
-            "name": "Beef Lentil Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39685,
-            "name": "Red Pepper and Basil Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 42957,
-            "name": "Spiced Pickled Red Onion",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 47947,
-            "name": "Tzatziki Sauce",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 48049,
-            "name": "Gyro Slices",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 44983,
-            "name": "Roasted Corn and Black Beans",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39684,
-            "name": "Sauteed Kale",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39181,
-            "name": "White rice steamed with salt and black pepper.",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 44098,
-            "name": "Blackened London Broil",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39271,
-            "name": "Pico De Gallo",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 41058,
-            "name": "Refried Beans",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39190,
-            "name": "Sauteed Peppers and Onions",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39449,
-            "name": "Steamed Corn",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39495,
-            "name": "Tofu Taco Meat",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 44102,
-            "name": "Beef Soft Tacos",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39521,
-            "name": "Cilantro Lime Brown Rice",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39273,
-            "name": "Taco Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39705,
-            "name": "Vegan Bruschetta Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 44101,
-            "name": "Chicken Jambalaya Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39356,
-            "name": "Fire Roasted Corn Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "DAILY SALADS LUNCH"
-          }
-        ]
-      },
-      "Dinner": {
-        "Bates": [
-          {
-            "did": 39489,
-            "name": "Cheeseburger Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39252,
-            "name": "Creamy Tomato Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 44093,
-            "name": "Sweet and Sour Breaded Boneless Chicken Wings",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 44094,
-            "name": "Sweet and Sour Fried Tofu",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39237,
-            "name": "Pork and Vegetable Egg Roll",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39612,
-            "name": "Sauteed Spicy Bok Choy",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39508,
-            "name": "Steamed Jasmine Rice",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39238,
-            "name": "Stir Fry Vegetable Medley",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39188,
-            "name": "Chicken Fajita",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 44091,
-            "name": "Citrus Cabbage Slaw",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39475,
-            "name": "Fried Tofu",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39272,
-            "name": "Pickled Red Onion",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 44090,
-            "name": "Baja Sauce",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39523,
-            "name": "Hot Honey Pepperoni Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39610,
-            "name": "Made to Order Nacho Bar",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39271,
-            "name": "Pico De Gallo",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39455,
-            "name": "Sour Cream Side",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39430,
-            "name": "Spicy Black Beans",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39609,
-            "name": "Guacamole",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39441,
-            "name": "Vegetarian Tortilla Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39454,
-            "name": "Potato and Cheese Pierogis",
-            "station": "DINNER"
-          },
-          {
-            "did": 39748,
-            "name": "Roasted Roma Tomatoes",
-            "station": "DINNER"
-          },
-          {
-            "did": 39307,
-            "name": "Steamed Broccoli",
-            "station": "DINNER"
-          },
-          {
-            "did": 44096,
-            "name": "Grilled Plantains with Spicy Black Beans",
-            "station": "DINNER"
-          },
-          {
-            "did": 44097,
-            "name": "Hand Cut Cajun Fried Jojos",
-            "station": "DINNER"
-          },
-          {
-            "did": 39671,
-            "name": "Microwaveable Mexican Rice",
-            "station": "DINNER"
-          },
-          {
-            "did": 41690,
-            "name": "Nashville Hot Chicken Sandwich",
-            "station": "DINNER"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 46945,
-            "name": "Buffalo Chicken Pasta",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 44089,
-            "name": "Beef Lentil Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39685,
-            "name": "Red Pepper and Basil Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39191,
-            "name": "Creamed Spinach",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39193,
-            "name": "Grilled Lamb with Thyme and Orange",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39251,
-            "name": "Sauteed Vegetable Medley",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39744,
-            "name": "Spicy Baked Tofu",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 42957,
-            "name": "Spiced Pickled Red Onion",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 47947,
-            "name": "Tzatziki Sauce",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 48049,
-            "name": "Gyro Slices",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39550,
-            "name": "Roasted Vegetable Tofu Scampi",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39737,
-            "name": "Steamed Carrots",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 44100,
-            "name": "Braised Italian Greens",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39551,
-            "name": "Shrimp Scampi with Lemon Garlic Butter",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 44101,
-            "name": "Chicken Jambalaya Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39356,
-            "name": "Fire Roasted Corn Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 44099,
-            "name": "Grit Cakes with Caramelized Onions",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39684,
-            "name": "Sauteed Kale",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39181,
-            "name": "White rice steamed with salt and black pepper.",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 44098,
-            "name": "Blackened London Broil",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39273,
-            "name": "Taco Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39705,
-            "name": "Vegan Bruschetta Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "FEATURE SALADS"
-          },
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI"
-          }
-        ]
-      }
-    },
-    "2025-12-17": {
-      "Breakfast": {
-        "Bates": [
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39212,
-            "name": "Tater Tots",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39308,
-            "name": "Turkey Bacon",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 44530,
-            "name": "Banana Buttermilk Pancakes",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "GS ROOM"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39607,
-            "name": "Beyond Vegan Breakfast Sausage Patty",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39608,
-            "name": "Made to Order Waffle Bar",
-            "station": "WAFFLE BAR"
-          },
-          {
-            "did": 39603,
-            "name": "Bagel Blueberry",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39604,
-            "name": "Bagel Cinnamon Raisin",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39605,
-            "name": "Bagel Plain",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 28736,
-            "name": "Bagel Poppy Seed",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 39606,
-            "name": "Bagel Whole Wheat",
-            "station": "BAGEL BAR"
-          },
-          {
-            "did": 28784,
-            "name": "Watermelon Kiwi and Lime Infused Water",
-            "station": "BEVERAGE"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 39176,
-            "name": "Fried Egg",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39177,
-            "name": "Made to Order Breakfast Sandwich Bar",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39286,
-            "name": "Pork Sausage Link",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39322,
-            "name": "Potato Tater Triangles",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39181,
-            "name": "White rice steamed with salt and black pepper.",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39183,
-            "name": "Western Tofu Scramble",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39175,
-            "name": "Breakfast Bowl with Sausage",
-            "station": "BREAKFAST"
-          },
-          {
-            "did": 39323,
-            "name": "Avocado Toast with Fried Egg",
-            "station": "HOT BREAKFAST SPECIALS"
-          },
-          {
-            "did": 39184,
-            "name": "Made to Order Fruit and Yogurt Bar",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39287,
-            "name": "Blueberry Buttermilk Pancakes",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39284,
-            "name": "Home Fry Potatoes",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39180,
-            "name": "Scrambled Eggs",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39211,
-            "name": "Scrambled Tofu",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39182,
-            "name": "Turkey Sausage Patty",
-            "station": "HOMESTYLE BREAKFAST"
-          },
-          {
-            "did": 39699,
-            "name": "Craft Breakfast Burrito",
-            "station": "BREAKFAST SANDWICHES"
-          },
-          {
-            "did": 28555,
-            "name": "Overnight Oats Base",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39648,
-            "name": "Granola GS",
-            "station": "FRUIT AND YOGURT BAR"
-          },
-          {
-            "did": 39187,
-            "name": "Oatmeal GS",
-            "station": "HOT CEREALS"
-          },
-          {
-            "did": 39186,
-            "name": "Hard Boiled Eggs",
-            "station": "HOT CEREALS"
-          }
-        ]
-      },
-      "Lunch": {
-        "Bates": [
-          {
-            "did": 39416,
-            "name": "Steamed Snow Peas",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 42868,
-            "name": "Teriyaki Tempeh Stir Fry",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39237,
-            "name": "Pork and Vegetable Egg Roll",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39612,
-            "name": "Sauteed Spicy Bok Choy",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 44531,
-            "name": "Seattle Style Teriyaki Chicken Thighs",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39508,
-            "name": "Steamed Jasmine Rice",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39274,
-            "name": "Housemade Fried Kettle Chips",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 44527,
-            "name": "Falafel Sandwich",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39534,
-            "name": "Italian Beans and Greens Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39244,
-            "name": "Lemony Greek Chickpea Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39540,
-            "name": "Chicken Bacon Ranch Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "GS ROOM"
-          },
-          {
-            "did": 39326,
-            "name": "Teriyaki Sauce",
-            "station": "GS ROOM"
-          },
-          {
-            "did": 39556,
-            "name": "Simple Baked Chicken Quarters",
-            "station": "GS ROOM"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39642,
-            "name": "Mediterranean Falafel Box",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 44534,
-            "name": "Made to Order Ramen Noodle Mushroom Bowl Bar",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39641,
-            "name": "Tomato Basil Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39560,
-            "name": "Chipotle Lentil Chili",
-            "station": "LUNCH"
-          },
-          {
-            "did": 44533,
-            "name": "Cowboy Potatoes",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39748,
-            "name": "Roasted Roma Tomatoes",
-            "station": "LUNCH"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "LUNCH"
-          },
-          {
-            "did": 44535,
-            "name": "Steamed Short Grain Rice",
-            "station": "LUNCH"
-          },
-          {
-            "did": 44536,
-            "name": "Sweet Plantains Fried",
-            "station": "LUNCH"
-          },
-          {
-            "did": 44537,
-            "name": "Tofu Katsu",
-            "station": "LUNCH"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 42825,
-            "name": "Artichoke and Tomato Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 41064,
-            "name": "Pepperoni and Banana Pepper Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 46662,
-            "name": "Chicken Noodle Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39641,
-            "name": "Tomato Basil Soup",
-            "station": "SOUPS LUNCH"
-          },
-          {
-            "did": 39310,
-            "name": "Chicken and Cheese Quesadilla",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39622,
-            "name": "Fresh Salsa",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39455,
-            "name": "Sour Cream Side",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39309,
-            "name": "Cheese Quesadilla",
-            "station": "GRILL & SPECIALS LUNCH"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI & FEATURES LUNCH"
-          },
-          {
-            "did": 39754,
-            "name": "Simple Pan Fried Falafel Sandwich",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39672,
-            "name": "Spicy Eggplant with Garbanzo Beans",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39510,
-            "name": "Steamed Bok Choy",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 44538,
-            "name": "Chicken Shawarma Skewer",
-            "station": "CLARITY LUNCH"
-          },
-          {
-            "did": 39643,
-            "name": "Sauteed Zucchini",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39675,
-            "name": "Tomato Ricotta Pasta Bake",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 44095,
-            "name": "Baked Penne Pasta with Meat Sauce",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39254,
-            "name": "Cheesy Garlic Bread",
-            "station": "HOMESTYLE LUNCH"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 44539,
-            "name": "Greek Chicken Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 28782,
-            "name": "Vegan Artichoke and Tomato Pizza",
-            "station": "PIZZA AND PASTA LUNCH"
-          },
-          {
-            "did": 39635,
-            "name": "Cuban Black Bean Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39563,
-            "name": "Philly Cheesesteak Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "DAILY SALADS LUNCH"
-          }
-        ]
-      },
-      "Dinner": {
-        "Bates": [
-          {
-            "did": 39534,
-            "name": "Italian Beans and Greens Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39244,
-            "name": "Lemony Greek Chickpea Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39447,
-            "name": "Steamed Basmati Rice",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39449,
-            "name": "Steamed Corn",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39529,
-            "name": "Turmeric Roasted Cauliflower",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 44528,
-            "name": "Alu Chole",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39531,
-            "name": "Cumin Roasted Potatoes",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39722,
-            "name": "Indian Spiced Baked Chicken",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 44529,
-            "name": "Samosa Cakes",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39274,
-            "name": "Housemade Fried Kettle Chips",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 44527,
-            "name": "Falafel Sandwich",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          },
-          {
-            "did": 39540,
-            "name": "Chicken Bacon Ranch Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39263,
-            "name": "Vegetable Lovers Pizza",
-            "station": "PIZZA (BY THE SLICE)"
-          },
-          {
-            "did": 39438,
-            "name": "Garlic Butter",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39439,
-            "name": "Pasta",
-            "station": "PASTAS"
-          },
-          {
-            "did": 39197,
-            "name": "Made to Order Deli Bar",
-            "station": "SPECIAL STATION"
-          }
-        ],
-        "Stone D": [
-          {
-            "did": 39610,
-            "name": "Made to Order Nacho Bar",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39271,
-            "name": "Pico De Gallo",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39455,
-            "name": "Sour Cream Side",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39430,
-            "name": "Spicy Black Beans",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39609,
-            "name": "Guacamole",
-            "station": "ADDITIONAL OFFERINGS"
-          },
-          {
-            "did": 39641,
-            "name": "Tomato Basil Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 44533,
-            "name": "Cowboy Potatoes",
-            "station": "DINNER"
-          },
-          {
-            "did": 39179,
-            "name": "Roasted Vegetables",
-            "station": "DINNER"
-          },
-          {
-            "did": 39449,
-            "name": "Steamed Corn",
-            "station": "DINNER"
-          },
-          {
-            "did": 42827,
-            "name": "Asiago Tofu",
-            "station": "DINNER"
-          },
-          {
-            "did": 44532,
-            "name": "Broccoli Pasta Bake",
-            "station": "DINNER"
-          },
-          {
-            "did": 39691,
-            "name": "Barley Pilaf",
-            "station": "DINNER"
-          },
-          {
-            "did": 39254,
-            "name": "Cheesy Garlic Bread",
-            "station": "DINNER"
-          }
-        ],
-        "Lulu": [
-          {
-            "did": 42825,
-            "name": "Artichoke and Tomato Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 41064,
-            "name": "Pepperoni and Banana Pepper Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 46662,
-            "name": "Chicken Noodle Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39641,
-            "name": "Tomato Basil Soup",
-            "station": "SOUPS DINNER"
-          },
-          {
-            "did": 39204,
-            "name": "Baked Tofu",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39716,
-            "name": "Made to Order Pasta Bar ",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39310,
-            "name": "Chicken and Cheese Quesadilla",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39622,
-            "name": "Fresh Salsa",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39455,
-            "name": "Sour Cream Side",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39309,
-            "name": "Cheese Quesadilla",
-            "station": "GRILL & SPECIALS DINNER"
-          },
-          {
-            "did": 39201,
-            "name": "Made to Order Salad Bar",
-            "station": "SALADS"
-          }
-        ],
-        "Tower": [
-          {
-            "did": 39768,
-            "name": "Sauteed Yellow Squash and Peppers",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39447,
-            "name": "Steamed Basmati Rice",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39767,
-            "name": "Chicken and Vegetable Curry",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39723,
-            "name": "Palak Paneer",
-            "station": "HOMESTYLE DINNER"
-          },
-          {
-            "did": 39635,
-            "name": "Cuban Black Bean Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39563,
-            "name": "Philly Cheesesteak Soup",
-            "station": "SOUPS"
-          },
-          {
-            "did": 39754,
-            "name": "Simple Pan Fried Falafel Sandwich",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39672,
-            "name": "Spicy Eggplant with Garbanzo Beans",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39510,
-            "name": "Steamed Bok Choy",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 44538,
-            "name": "Chicken Shawarma Skewer",
-            "station": "CLARITY DINNER"
-          },
-          {
-            "did": 39199,
-            "name": "Cheese Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 44539,
-            "name": "Greek Chicken Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39657,
-            "name": "Pasta ",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39659,
-            "name": "Housemade Alfredo Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 39256,
-            "name": "Housemade Marinara Sauce",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 28782,
-            "name": "Vegan Artichoke and Tomato Pizza",
-            "station": "PIZZA & PASTA DINNER"
-          },
-          {
-            "did": 42871,
-            "name": "Chickpea Barley and Feta Salad",
-            "station": "FEATURE SALADS"
-          },
-          {
-            "did": 39701,
-            "name": "Deli Roast Beef",
-            "station": "DELI"
-          },
-          {
-            "did": 39341,
-            "name": "Roasted Turkey Breast",
-            "station": "DELI"
-          },
-          {
-            "did": 39702,
-            "name": "Tuna Salad",
-            "station": "DELI"
-          }
-        ]
-      }
-    },
     "2025-12-18": {
       "Breakfast": {
         "Bates": [
@@ -4616,6 +1900,2882 @@
           {
             "did": 28782,
             "name": "Vegan Artichoke and Tomato Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "FEATURE SALADS"
+          },
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI"
+          }
+        ]
+      }
+    },
+    "2025-12-22": {
+      "Breakfast": {
+        "Bates": [
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39178,
+            "name": "Potatoes Obrien",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39182,
+            "name": "Turkey Sausage Patty",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 46237,
+            "name": "French Toast",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39284,
+            "name": "Home Fry Potatoes",
+            "station": "GS ROOM"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39616,
+            "name": "Vegetarian Sausage Patty",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39608,
+            "name": "Made to Order Waffle Bar",
+            "station": "WAFFLE BAR"
+          },
+          {
+            "did": 39603,
+            "name": "Bagel Blueberry",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39604,
+            "name": "Bagel Cinnamon Raisin",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39605,
+            "name": "Bagel Plain",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 28736,
+            "name": "Bagel Poppy Seed",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39606,
+            "name": "Bagel Whole Wheat",
+            "station": "BAGEL BAR"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39178,
+            "name": "Potatoes Obrien",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39308,
+            "name": "Turkey Bacon",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39183,
+            "name": "Western Tofu Scramble",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39210,
+            "name": "Breakfast Bowl with Bacon",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 46228,
+            "name": "Strawberry Stuffed French Toast",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39565,
+            "name": "Belgian Waffle",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39284,
+            "name": "Home Fry Potatoes",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39308,
+            "name": "Turkey Bacon",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39699,
+            "name": "Craft Breakfast Burrito",
+            "station": "BREAKFAST SANDWICHES"
+          },
+          {
+            "did": 28555,
+            "name": "Overnight Oats Base",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39648,
+            "name": "Granola GS",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          }
+        ]
+      },
+      "Lunch": {
+        "Bates": [
+          {
+            "did": 39295,
+            "name": "Roasted Potato Wedges",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39768,
+            "name": "Sauteed Yellow Squash and Peppers",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39517,
+            "name": "Balsamic Glazed Brussels Sprouts",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39520,
+            "name": "Chipotle Tofu Sofritas",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46238,
+            "name": "Honey Chipotle Chicken Quarters",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39377,
+            "name": "Lemon Rice",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 22902,
+            "name": "Made to Order Hot Dog Bar",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39497,
+            "name": "Crinkle Cut French Fries",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39581,
+            "name": "Beef and Vegetable Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39582,
+            "name": "Mushroom Barley Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39224,
+            "name": "Pepperoni Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39263,
+            "name": "Vegetable Lovers Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 44524,
+            "name": "Potato Leek Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39420,
+            "name": "Roasted Corn and Red Peppers",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39278,
+            "name": "Steamed Green Beans",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39435,
+            "name": "Garlic Bread Stick",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39656,
+            "name": "Housemade Vegan Meatballs",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 46239,
+            "name": "Mediterranean Quinoa Primavera",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 46241,
+            "name": "Microwaveable Pasta Alfredo Broccoli",
+            "station": "LUNCH/DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39768,
+            "name": "Sauteed Yellow Squash and Peppers",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39673,
+            "name": "Stuffing",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39453,
+            "name": "Caramelized Onions",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39369,
+            "name": "Cider Whipped Sweet Potatoes",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46235,
+            "name": "Pork Tenderloin Medallions with Mushroom Sauce",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 41709,
+            "name": "Roasted Peas and Carrots",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 42825,
+            "name": "Artichoke and Tomato Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 46233,
+            "name": "Bacon Cheddar Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 45395,
+            "name": "Bean and Tortellini Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 46234,
+            "name": "Chicken Corn and Potato Chowder",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39731,
+            "name": "Chicken Nuggets",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 46229,
+            "name": "Grilled Fresh Corn",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 46230,
+            "name": "Buttermilk Fried Chicken Breast",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 46231,
+            "name": "Vegetable Gravy",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39742,
+            "name": "Cheddar Mashed Potatoes",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 46243,
+            "name": "Chickpea Pasta",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 46244,
+            "name": "Simple Bolognese",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39278,
+            "name": "Steamed Green Beans",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 46242,
+            "name": "Lentil Bolognese with Cheese Tortellini",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 44980,
+            "name": "Mexican Vegan Casserole",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39299,
+            "name": "Steamed White Rice",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39627,
+            "name": "Balsamic Agave Glazed Carrots",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46248,
+            "name": "Chile Chicken Casserole",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 42825,
+            "name": "Artichoke and Tomato Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 46246,
+            "name": "Baja Chicken Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 46247,
+            "name": "Chicken Lentil and Swiss Chard Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39318,
+            "name": "Lentil Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "DAILY SALADS LUNCH"
+          }
+        ]
+      },
+      "Dinner": {
+        "Bates": [
+          {
+            "did": 39581,
+            "name": "Beef and Vegetable Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39582,
+            "name": "Mushroom Barley Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39295,
+            "name": "Roasted Potato Wedges",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46236,
+            "name": "BBQ Chicken Quarters",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39368,
+            "name": "BBQ Tofu",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39398,
+            "name": "Cornbread",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39194,
+            "name": "Roasted Brussels Sprouts",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 22902,
+            "name": "Made to Order Hot Dog Bar",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39497,
+            "name": "Crinkle Cut French Fries",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39224,
+            "name": "Pepperoni Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39222,
+            "name": "Margherita Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39740,
+            "name": "Vegetarian Onion Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39333,
+            "name": "Sauteed Spinach with Garlic",
+            "station": "DINNER"
+          },
+          {
+            "did": 39331,
+            "name": "Roasted Carrots",
+            "station": "DINNER"
+          },
+          {
+            "did": 39278,
+            "name": "Steamed Green Beans",
+            "station": "DINNER"
+          },
+          {
+            "did": 39435,
+            "name": "Garlic Bread Stick",
+            "station": "DINNER"
+          },
+          {
+            "did": 39656,
+            "name": "Housemade Vegan Meatballs",
+            "station": "DINNER"
+          },
+          {
+            "did": 46239,
+            "name": "Mediterranean Quinoa Primavera",
+            "station": "DINNER"
+          },
+          {
+            "did": 46240,
+            "name": "Portabella Mushroom Meatballs and Gravy",
+            "station": "DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 42825,
+            "name": "Artichoke and Tomato Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 46233,
+            "name": "Bacon Cheddar Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 45395,
+            "name": "Bean and Tortellini Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 46234,
+            "name": "Chicken Corn and Potato Chowder",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46232,
+            "name": "Fresh Sage Mashed Potatoes",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 42836,
+            "name": "Rotisserie Turkey Breast with Sage Gravy",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39251,
+            "name": "Sauteed Vegetable Medley",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39643,
+            "name": "Sauteed Zucchini",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39731,
+            "name": "Chicken Nuggets",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 46229,
+            "name": "Grilled Fresh Corn",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 46230,
+            "name": "Buttermilk Fried Chicken Breast",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 46231,
+            "name": "Vegetable Gravy",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39742,
+            "name": "Cheddar Mashed Potatoes",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39358,
+            "name": "Cajun Seared Tofu with Pineapple Salsa",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39299,
+            "name": "Steamed White Rice",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39748,
+            "name": "Roasted Roma Tomatoes",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39743,
+            "name": "Sauteed Spinach",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46245,
+            "name": "Brazilian Fish Stew",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39499,
+            "name": "Buttered Steamed Corn",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46247,
+            "name": "Chicken Lentil and Swiss Chard Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39318,
+            "name": "Lentil Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 46243,
+            "name": "Chickpea Pasta",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 46244,
+            "name": "Simple Bolognese",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39278,
+            "name": "Steamed Green Beans",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 46242,
+            "name": "Lentil Bolognese with Cheese Tortellini",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 42825,
+            "name": "Artichoke and Tomato Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 46246,
+            "name": "Baja Chicken Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "FEATURE SALADS"
+          },
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI"
+          }
+        ]
+      }
+    },
+    "2025-12-23": {
+      "Breakfast": {
+        "Bates": [
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39286,
+            "name": "Pork Sausage Link",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39322,
+            "name": "Potato Tater Triangles",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39565,
+            "name": "Belgian Waffle",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39459,
+            "name": "Burrito Egg and Cheese",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39284,
+            "name": "Home Fry Potatoes",
+            "station": "GS ROOM"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39626,
+            "name": "Sweet Potato Scramble",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39616,
+            "name": "Vegetarian Sausage Patty",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39608,
+            "name": "Made to Order Waffle Bar",
+            "station": "WAFFLE BAR"
+          },
+          {
+            "did": 39603,
+            "name": "Bagel Blueberry",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39604,
+            "name": "Bagel Cinnamon Raisin",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39605,
+            "name": "Bagel Plain",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 28736,
+            "name": "Bagel Poppy Seed",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39606,
+            "name": "Bagel Whole Wheat",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 28762,
+            "name": "Blueberry Lemon and Rosemary Infused Water",
+            "station": "BEVERAGE"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39286,
+            "name": "Pork Sausage Link",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39212,
+            "name": "Tater Tots",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39175,
+            "name": "Breakfast Bowl with Sausage",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 42821,
+            "name": "Sausage and Potato Breakfast Hash",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39214,
+            "name": "Cream of Wheat",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39213,
+            "name": "Biscuit and Sausage Gravy",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39284,
+            "name": "Home Fry Potatoes",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39343,
+            "name": "Turkey Sausage Link",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "BREAKFAST SANDWICHES"
+          },
+          {
+            "did": 28555,
+            "name": "Overnight Oats Base",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39648,
+            "name": "Granola GS",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          }
+        ]
+      },
+      "Lunch": {
+        "Bates": [
+          {
+            "did": 46667,
+            "name": "Italian Sausage with Peppers and Onions",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39251,
+            "name": "Sauteed Vegetable Medley",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39278,
+            "name": "Steamed Green Beans",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46668,
+            "name": "Cheese Stuffed Shells",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39435,
+            "name": "Garlic Bread Stick",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46664,
+            "name": "Texas Toast Pepperoni Melt",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 46665,
+            "name": "Ultimate Grilled Cheese",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39274,
+            "name": "Housemade Fried Kettle Chips",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39596,
+            "name": "Broccoli Cheddar Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39317,
+            "name": "Chicken Lemon Rice Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39595,
+            "name": "Chicken Greek Pizza ",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39263,
+            "name": "Vegetable Lovers Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          },
+          {
+            "did": 39196,
+            "name": "Rosemary Grilled Tofu",
+            "station": "GS ROOM"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "GS ROOM"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39780,
+            "name": "Vegetarian Chili",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39620,
+            "name": "Steamed Peas",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 46671,
+            "name": "Tofu Pad Thai",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39621,
+            "name": "Baked Chicken Tenders",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39483,
+            "name": "Herbed Carrots",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39617,
+            "name": "Crispy Chickpeas",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39619,
+            "name": "Roasted Butternut Squash",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39516,
+            "name": "Sauteed Squash Medley with Garlic",
+            "station": "LUNCH/DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46663,
+            "name": "Chicken Pot Pie with Herb Biscuit Crust",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39208,
+            "name": "Sauteed Green Beans",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39230,
+            "name": "Steamed Peas and Carrots",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 27799,
+            "name": "FTG Apple Twist Danish",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39224,
+            "name": "Pepperoni Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 46662,
+            "name": "Chicken Noodle Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39635,
+            "name": "Cuban Black Bean Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 46660,
+            "name": "Classic Southern Style Shrimp and Grits",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 46672,
+            "name": "Caribbean Jerked Rotisserie Half Chicken",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39370,
+            "name": "Garlic Collard Greens",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 44536,
+            "name": "Sweet Plantains Fried",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 43441,
+            "name": "Cajun Lentil Cakes",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39427,
+            "name": "Cilantro Lime White Rice",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39420,
+            "name": "Roasted Corn and Red Peppers",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46669,
+            "name": "Buffalo Cauliflower Taco",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 46674,
+            "name": "Cancun Citrus Grilled Chicken Taco",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39222,
+            "name": "Margherita Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39273,
+            "name": "Taco Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39544,
+            "name": "Beef Enchilada Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39423,
+            "name": "Navy Bean Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "DAILY SALADS LUNCH"
+          }
+        ]
+      },
+      "Dinner": {
+        "Bates": [
+          {
+            "did": 39596,
+            "name": "Broccoli Cheddar Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39317,
+            "name": "Chicken Lemon Rice Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39550,
+            "name": "Roasted Vegetable Tofu Scampi",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39643,
+            "name": "Sauteed Zucchini",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46666,
+            "name": "Steamed Dill Carrots",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39220,
+            "name": "Lemon Chicken Piccata",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39377,
+            "name": "Lemon Rice",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39277,
+            "name": "Parslied Egg Noodles",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46664,
+            "name": "Texas Toast Pepperoni Melt",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 46665,
+            "name": "Ultimate Grilled Cheese",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39274,
+            "name": "Housemade Fried Kettle Chips",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39594,
+            "name": "Broccoli Ranch Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39595,
+            "name": "Chicken Greek Pizza ",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39780,
+            "name": "Vegetarian Chili",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39623,
+            "name": "Spanish Quinoa",
+            "station": "DINNER"
+          },
+          {
+            "did": 39624,
+            "name": "Steamed Cauliflower",
+            "station": "DINNER"
+          },
+          {
+            "did": 46670,
+            "name": "Cheesy Jalapeno Tater Tots",
+            "station": "DINNER"
+          },
+          {
+            "did": 46669,
+            "name": "Buffalo Cauliflower Taco",
+            "station": "DINNER"
+          },
+          {
+            "did": 39521,
+            "name": "Cilantro Lime Brown Rice",
+            "station": "DINNER"
+          },
+          {
+            "did": 39420,
+            "name": "Roasted Corn and Red Peppers",
+            "station": "DINNER"
+          },
+          {
+            "did": 39446,
+            "name": "Roasted Cauliflower",
+            "station": "DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39224,
+            "name": "Pepperoni Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 27799,
+            "name": "FTG Apple Twist Danish",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 46662,
+            "name": "Chicken Noodle Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39635,
+            "name": "Cuban Black Bean Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 46661,
+            "name": "Broiled Cod Fish with Spinach and Tomato",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39360,
+            "name": "Couscous Pilaf",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39250,
+            "name": "Grilled Tofu Bruschetta",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39586,
+            "name": "Roasted Asparagus",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39295,
+            "name": "Roasted Potato Wedges",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39251,
+            "name": "Sauteed Vegetable Medley",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 46660,
+            "name": "Classic Southern Style Shrimp and Grits",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 46673,
+            "name": "Entree Meatball",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 45407,
+            "name": "Garlic Butter Zucchini",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39620,
+            "name": "Steamed Peas",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39261,
+            "name": "Vegan Meatballs with Marinara",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39462,
+            "name": "Cheese Tortellini with Marinara Sauce",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39254,
+            "name": "Cheesy Garlic Bread",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39544,
+            "name": "Beef Enchilada Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39423,
+            "name": "Navy Bean Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 46672,
+            "name": "Caribbean Jerked Rotisserie Half Chicken",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39370,
+            "name": "Garlic Collard Greens",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 44536,
+            "name": "Sweet Plantains Fried",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 43441,
+            "name": "Cajun Lentil Cakes",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39222,
+            "name": "Margherita Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39273,
+            "name": "Taco Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "FEATURE SALADS"
+          },
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI"
+          }
+        ]
+      }
+    },
+    "2025-12-24": {
+      "Breakfast": {
+        "Bates": [
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39442,
+            "name": "Hash Browns",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39308,
+            "name": "Turkey Bacon",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39443,
+            "name": "Cinnamon Roll Pancakes",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39607,
+            "name": "Beyond Vegan Breakfast Sausage Patty",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39608,
+            "name": "Made to Order Waffle Bar",
+            "station": "WAFFLE BAR"
+          },
+          {
+            "did": 39603,
+            "name": "Bagel Blueberry",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39604,
+            "name": "Bagel Cinnamon Raisin",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39605,
+            "name": "Bagel Plain",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 28736,
+            "name": "Bagel Poppy Seed",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 39606,
+            "name": "Bagel Whole Wheat",
+            "station": "BAGEL BAR"
+          },
+          {
+            "did": 28784,
+            "name": "Watermelon Kiwi and Lime Infused Water",
+            "station": "BEVERAGE"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39176,
+            "name": "Fried Egg",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39177,
+            "name": "Made to Order Breakfast Sandwich Bar",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39178,
+            "name": "Potatoes Obrien",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39182,
+            "name": "Turkey Sausage Patty",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39183,
+            "name": "Western Tofu Scramble",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39175,
+            "name": "Breakfast Bowl with Sausage",
+            "station": "BREAKFAST"
+          },
+          {
+            "did": 39185,
+            "name": "Egg and American Cheese Sandwich on Bagel",
+            "station": "HOT BREAKFAST SPECIALS"
+          },
+          {
+            "did": 39184,
+            "name": "Made to Order Fruit and Yogurt Bar",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39525,
+            "name": "Chocolate Chip Buttermilk Pancakes",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39284,
+            "name": "Home Fry Potatoes",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39179,
+            "name": "Roasted Vegetables",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39180,
+            "name": "Scrambled Eggs",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39211,
+            "name": "Scrambled Tofu",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39182,
+            "name": "Turkey Sausage Patty",
+            "station": "HOMESTYLE BREAKFAST"
+          },
+          {
+            "did": 39699,
+            "name": "Craft Breakfast Burrito",
+            "station": "BREAKFAST SANDWICHES"
+          },
+          {
+            "did": 28555,
+            "name": "Overnight Oats Base",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39648,
+            "name": "Granola GS",
+            "station": "FRUIT AND YOGURT BAR"
+          },
+          {
+            "did": 39187,
+            "name": "Oatmeal GS",
+            "station": "HOT CEREALS"
+          },
+          {
+            "did": 39186,
+            "name": "Hard Boiled Eggs",
+            "station": "HOT CEREALS"
+          }
+        ]
+      },
+      "Lunch": {
+        "Bates": [
+          {
+            "did": 39447,
+            "name": "Steamed Basmati Rice",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39449,
+            "name": "Steamed Corn",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39444,
+            "name": "Coconut Chickpea Stew",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39445,
+            "name": "Coconut Curry Chicken Thighs",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39448,
+            "name": "Grilled Mini Naan Dippers",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39446,
+            "name": "Roasted Cauliflower",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39432,
+            "name": "French Fries Skin On",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39431,
+            "name": "Housemade Meatball Sub",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39390,
+            "name": "Chicken Tortilla Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39441,
+            "name": "Vegetarian Tortilla Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39440,
+            "name": "Cheese Burger Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39263,
+            "name": "Vegetable Lovers Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39614,
+            "name": "White Bean and Kale Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39613,
+            "name": "Sesame Broccoli",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39449,
+            "name": "Steamed Corn",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39321,
+            "name": "Stewed Garbanzo Beans with Tomatoes",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39611,
+            "name": "Asian Roasted Mushrooms",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39195,
+            "name": "Cajun Roasted Potatoes",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 46242,
+            "name": "Lentil Bolognese with Cheese Tortellini",
+            "station": "LUNCH/DINNER"
+          },
+          {
+            "did": 39612,
+            "name": "Sauteed Spicy Bok Choy",
+            "station": "LUNCH/DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39205,
+            "name": "Curry Chickpeas and Sweet Potatoes",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39206,
+            "name": "Indian Spiced Grilled Chicken",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39207,
+            "name": "North Indian Pea Mushroom and Cashew Curry",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39208,
+            "name": "Sauteed Green Beans",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39198,
+            "name": "Eggplant Parmesan Stromboli",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39200,
+            "name": "Meat Lovers Stromboli",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39202,
+            "name": "Roasted Eggplant Tomato Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39203,
+            "name": "Stuffed Pepper Soup",
+            "station": "SOUPS LUNCH"
+          },
+          {
+            "did": 39189,
+            "name": "Fajita Marinated Tofu",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39190,
+            "name": "Sauteed Peppers and Onions",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39188,
+            "name": "Chicken Fajita",
+            "station": "GRILL & SPECIALS LUNCH"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39701,
+            "name": "Deli Roast Beef",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39341,
+            "name": "Roasted Turkey Breast",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39702,
+            "name": "Tuna Salad",
+            "station": "DELI & FEATURES LUNCH"
+          },
+          {
+            "did": 39402,
+            "name": "Blanched Carrots",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39672,
+            "name": "Spicy Eggplant with Garbanzo Beans",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39700,
+            "name": "Baked Herb Chicken",
+            "station": "CLARITY LUNCH"
+          },
+          {
+            "did": 39370,
+            "name": "Garlic Collard Greens",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39707,
+            "name": "Red Beans and Rice",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39208,
+            "name": "Sauteed Green Beans",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39708,
+            "name": "Smoked Tofu",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39706,
+            "name": "Cajun Turkey Breast",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39398,
+            "name": "Cornbread",
+            "station": "HOMESTYLE LUNCH"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39542,
+            "name": "Hawaiian Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39705,
+            "name": "Vegan Bruschetta Pizza",
+            "station": "PIZZA AND PASTA LUNCH"
+          },
+          {
+            "did": 39302,
+            "name": "Creamy Turkey Noodle Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39685,
+            "name": "Red Pepper and Basil Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39703,
+            "name": "Fall Farro Salad",
+            "station": "DAILY SALADS LUNCH"
+          }
+        ]
+      },
+      "Dinner": {
+        "Bates": [
+          {
+            "did": 39390,
+            "name": "Chicken Tortilla Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39441,
+            "name": "Vegetarian Tortilla Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39434,
+            "name": "Cheese Ravioli Marinara",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39435,
+            "name": "Garlic Bread Stick",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39436,
+            "name": "Ravioli with Chorizo and Florentine Cream Sauce",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39437,
+            "name": "Sauteed Green Beans with Oregano",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39385,
+            "name": "Sauteed Squash Medley",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39432,
+            "name": "French Fries Skin On",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39431,
+            "name": "Housemade Meatball Sub",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          },
+          {
+            "did": 39440,
+            "name": "Cheese Burger Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39263,
+            "name": "Vegetable Lovers Pizza",
+            "station": "PIZZA (BY THE SLICE)"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39439,
+            "name": "Pasta",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39438,
+            "name": "Garlic Butter",
+            "station": "PASTAS"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "SPECIAL STATION"
+          },
+          {
+            "did": 39433,
+            "name": "Pasta Primavera GS",
+            "station": "GS ROOM"
+          }
+        ],
+        "Stone D": [
+          {
+            "did": 39610,
+            "name": "Made to Order Nacho Bar",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39271,
+            "name": "Pico De Gallo",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39204,
+            "name": "Baked Tofu",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39455,
+            "name": "Sour Cream Side",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39430,
+            "name": "Spicy Black Beans",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39609,
+            "name": "Guacamole",
+            "station": "ADDITIONAL OFFERINGS"
+          },
+          {
+            "did": 39614,
+            "name": "White Bean and Kale Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39613,
+            "name": "Sesame Broccoli",
+            "station": "DINNER"
+          },
+          {
+            "did": 39449,
+            "name": "Steamed Corn",
+            "station": "DINNER"
+          },
+          {
+            "did": 39321,
+            "name": "Stewed Garbanzo Beans with Tomatoes",
+            "station": "DINNER"
+          },
+          {
+            "did": 39611,
+            "name": "Asian Roasted Mushrooms",
+            "station": "DINNER"
+          },
+          {
+            "did": 39195,
+            "name": "Cajun Roasted Potatoes",
+            "station": "DINNER"
+          },
+          {
+            "did": 39537,
+            "name": "Orange Fried Tofu",
+            "station": "DINNER"
+          },
+          {
+            "did": 39612,
+            "name": "Sauteed Spicy Bok Choy",
+            "station": "DINNER"
+          }
+        ],
+        "Lulu": [
+          {
+            "did": 39198,
+            "name": "Eggplant Parmesan Stromboli",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39200,
+            "name": "Meat Lovers Stromboli",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39202,
+            "name": "Roasted Eggplant Tomato Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39203,
+            "name": "Stuffed Pepper Soup",
+            "station": "SOUPS DINNER"
+          },
+          {
+            "did": 39191,
+            "name": "Creamed Spinach",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39192,
+            "name": "Creamy Polenta",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39193,
+            "name": "Grilled Lamb with Thyme and Orange",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39680,
+            "name": "Herb Roasted Red Potatoes",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39194,
+            "name": "Roasted Brussels Sprouts",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39196,
+            "name": "Rosemary Grilled Tofu",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39189,
+            "name": "Fajita Marinated Tofu",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39190,
+            "name": "Sauteed Peppers and Onions",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39188,
+            "name": "Chicken Fajita",
+            "station": "GRILL & SPECIALS DINNER"
+          },
+          {
+            "did": 39197,
+            "name": "Made to Order Deli Bar",
+            "station": "NOOK"
+          },
+          {
+            "did": 39201,
+            "name": "Made to Order Salad Bar",
+            "station": "SALADS"
+          }
+        ],
+        "Tower": [
+          {
+            "did": 39643,
+            "name": "Sauteed Zucchini",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39704,
+            "name": "Tandoori Chicken Thighs",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39275,
+            "name": "Vegan Cutlet",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39299,
+            "name": "Steamed White Rice",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39492,
+            "name": "Roasted Corn",
+            "station": "HOMESTYLE DINNER"
+          },
+          {
+            "did": 39302,
+            "name": "Creamy Turkey Noodle Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39685,
+            "name": "Red Pepper and Basil Soup",
+            "station": "SOUPS"
+          },
+          {
+            "did": 39402,
+            "name": "Blanched Carrots",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39672,
+            "name": "Spicy Eggplant with Garbanzo Beans",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39181,
+            "name": "White rice steamed with salt and black pepper.",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39700,
+            "name": "Baked Herb Chicken",
+            "station": "CLARITY DINNER"
+          },
+          {
+            "did": 39199,
+            "name": "Cheese Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39542,
+            "name": "Hawaiian Pizza",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39657,
+            "name": "Pasta ",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39659,
+            "name": "Housemade Alfredo Sauce",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39256,
+            "name": "Housemade Marinara Sauce",
+            "station": "PIZZA & PASTA DINNER"
+          },
+          {
+            "did": 39705,
+            "name": "Vegan Bruschetta Pizza",
             "station": "PIZZA & PASTA DINNER"
           },
           {
