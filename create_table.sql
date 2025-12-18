@@ -71,7 +71,7 @@ CREATE TABLE `notification` (
   `nid` INT PRIMARY KEY AUTO_INCREMENT,
   `time` TEXT,
   `location` TEXT,
-  `description` TEXT,
+  `freefood` TEXT,
   `owner` INT
 );
 
