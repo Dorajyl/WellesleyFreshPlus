@@ -7,9 +7,9 @@
   <section class="feast-banner">
     <h2>Wellesley Feast Free Food Alerts!</h2>
 
-    {% for nid, time, location, description in feast_events %}
+    {% for nid, time, location, freefood in feast_events %}
       <div class="feast-card">
-        <strong>{{ description }}</strong><br>
+        <strong>{{ freefood }}</strong><br>
         <span>Where: {{ location }}</span><br>
         <span>When: {{ time }}</span>
       </div>

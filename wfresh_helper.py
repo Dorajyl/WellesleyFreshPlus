@@ -267,10 +267,10 @@ def insert_feast_notification(owner_uid, time_text: str, location: str, descript
     try:
         cur.execute(
             '''
-            INSERT INTO notification (time, location, description, owner)
+            INSERT INTO notification (time, location, freefood, owner)
             VALUES (%s, %s, %s, %s)
             ''',
-            (time_text, location, description, owner_uid)
+            (time_text, location, freefood, owner_uid)
         )
         conn.commit()
     except Exception:
@@ -285,13 +285,13 @@ def get_recent_feast_events(limit: int = 3):
     Fetch the most recent feast notifications.
 
     Returns:
-        list of tuples: (nid, time, location, description)
+        list of tuples: (nid, time, location, freefood)
     """
     conn, cur = db_connect(dict_cursor=False)
     try:
         cur.execute(
             '''
-            SELECT nid, time, location, description
+            SELECT nid, time, location, freefood
             FROM notification
             ORDER BY nid DESC
             LIMIT %s
