@@ -254,7 +254,7 @@ def db_connect(dict_cursor: bool = False):
 # ------------------------------------------------------------------------------------
 # Feast notifications (thread-safe)
 # ------------------------------------------------------------------------------------
-def insert_feast_notification(owner_uid, time_text: str, location: str, description: str):
+def insert_feast_notification(owner_uid, time_text: str, location: str, freefood: str):
     """
     Insert a new feast notification.
 
