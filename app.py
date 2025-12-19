@@ -201,7 +201,7 @@ def index():
             owner_uid=uid,
             time_text=time_text,
             location=location,
-            description=free_food
+            freefood=free_food
         )
 
         flash(f'Feast: {free_food}\nWhere: {location}\nWhen: {time_text}')
